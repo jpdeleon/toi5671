@@ -1,0 +1,17 @@
+#property,value,lower_error,upper_error,source
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$,0.06470648099183415,0.006330024277540432,0.004339321755724462,derived
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$,15.454402475173982,0.9712628749850509,1.675791036736701,derived
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$,0.017169663134026996,0.0017778382673644243,0.001648619139621131,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$),12.013863086872066,0.9344239483447847,0.9241054962203386,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$),1.071806917618457,0.08336386427765186,0.08244331205509603,derived
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$),6.345578878421587,0.4291558160022415,0.7024125995120638,derived
+Semi-major axis b; $a_\mathrm{b}$ (AU),0.02950990682595256,0.0019957750721699245,0.0032665467977181784,derived
+Inclination b; $i_\mathrm{b}$ (deg),88.86906355614782,0.7924008046294233,0.7592263081934334,derived
+Impact parameter b; $b_\mathrm{tra;b}$,0.31149305829891183,0.20734852707143828,0.20307601602444125,derived
+Total transit duration b; $T_\mathrm{tot;b}$ (h),1.9739109353684452,0.16864930279248824,0.145920477716998,derived
+Full-transit duration b; $T_\mathrm{full;b}$ (h),1.0380710393995898,0.22975453371604626,0.16942567421868326,derived
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K),552.8881561196598,36.00058340061287,33.942732837215544,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; tess}$ (ppt),87.68754894189456,8.702460928054819,8.783437560362827,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; tess}$ (ppt),87.68754894189456,8.702460928054819,8.783437560362827,derived
+Limb darkening; $u_\mathrm{1; tess}$,0.606687770838247,0.41852670034361683,0.5453053930294094,derived
+Limb darkening; $u_\mathrm{2; tess}$,-0.008771214365394117,0.4053023705116983,0.4455684861882443,derived
