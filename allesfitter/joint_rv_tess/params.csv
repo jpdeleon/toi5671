@@ -3,11 +3,13 @@
 b_rr,0.2848,1,uniform 0 0.3079,$R_b / R_\star$,
 b_rsuma,0.09,1,uniform 0.0214 0.09,$(R_\star + R_b) / a_b$,
 b_cosi,0.0,1,uniform 0.0 0.3,$\cos{i_b}$,
-b_epoch,2459685.81,1,normal 2459685.81 0.1,$T_{0;b}$,BJD
-b_period,3.3080,1,normal 3.3080 0.0007,$P_b$,d
+#b_epoch,2459685.81,1,normal 2459685.81 0.1,$T_{0;b}$,BJD
+b_epoch,2459216.0432,1,normal 2459216.0432 0.0015,$T_{0;b}$,BJD
+#b_period,3.3080,1,normal 3.3080 0.0007,$P_b$,d
+b_period,3.307820,1,normal 3.307820 0.000012,$P_b$,d
 b_K,0.240,1,uniform 0.100 0.600,$K_b$,$\mathrm{km/s}$
-b_f_c,0.0,1,uniform -1 1,$\sqrt{e_b} \cos{\omega_b}$,
-b_f_s,0.0,1,uniform -1 1,$\sqrt{e_b} \sin{\omega_b}$,
+b_f_c,0.0,0,uniform -1 1,$\sqrt{e_b} \cos{\omega_b}$,
+b_f_s,0.0,0,uniform -1 1,$\sqrt{e_b} \sin{\omega_b}$,
 #dilution per instrument,,,,,
 dil_tess,0.0,0,trunc_normal 0 1 0.0 0.0,$D_\mathrm{0; tess}$,
 #limb darkening coefficients per instrument,,,,,
