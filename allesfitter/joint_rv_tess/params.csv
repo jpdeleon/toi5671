@@ -1,0 +1,32 @@
+#name,value,fit,bounds,label,unit
+#companion b astrophysical params,,,,,
+b_rr,0.2848,1,uniform 0 0.3079,$R_b / R_\star$,
+b_rsuma,0.09,1,uniform 0.0214 0.09,$(R_\star + R_b) / a_b$,
+b_cosi,0.0,1,uniform 0.0 0.3,$\cos{i_b}$,
+b_epoch,2459685.81,1,normal 2459685.81 0.1,$T_{0;b}$,BJD
+b_period,3.3080,1,normal 3.3080 0.0007,$P_b$,d
+b_K,0.240,1,uniform 0.100 0.600,$K_b$,$\mathrm{km/s}$
+b_f_c,0.0,1,uniform -1 1,$\sqrt{e_b} \cos{\omega_b}$,
+b_f_s,0.0,1,uniform -1 1,$\sqrt{e_b} \sin{\omega_b}$,
+#dilution per instrument,,,,,
+dil_tess,0.0,0,trunc_normal 0 1 0.0 0.0,$D_\mathrm{0; tess}$,
+#limb darkening coefficients per instrument,,,,,
+#ldc=0.45, 0.01, 0.29, 0.03
+host_ldc_q1_tess,0.45,1,normal 0.45 0.03,$q_{1; \mathrm{tess}}$,
+host_ldc_q2_tess,0.29,1,normal 0.29 0.09,$q_{2; \mathrm{tess}}$,
+#surface brightness per instrument and companion,,,,,
+b_sbratio_tess,0.0,0,trunc_normal 0 1 0.0 0.0,$J_{b; \mathrm{tess}}$,
+#albedo per instrument and companion,,,,,
+host_geom_albedo_tess,0.0,0,trunc_normal 0 1 0.0 0.0,$A_{\mathrm{geom}; host; \mathrm{tess}}$,
+b_geom_albedo_tess,0.0,0,trunc_normal 0 1 0.0 0.0,$A_{\mathrm{geom}; b; \mathrm{tess}}$,
+#gravity darkening per instrument and companion,,,,,
+host_gdc_tess,0.0,0,trunc_normal 0 1 0.0 0.0,$Grav. dark._{b; \mathrm{tess}}$,
+#spots per instrument and companion,,,,,
+#errors per instrument,
+ln_err_flux_tess,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{tess}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_jitter_rv_ird,-3.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{jitter; ird}}$,$\ln{ \mathrm{km/s} }$
+#baseline per instrument,
+baseline_gp_matern32_lnsigma_flux_tess,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (tess)}$,
+baseline_gp_matern32_lnrho_flux_tess,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (tess)}$,
+baseline_gp_matern32_lnsigma_rv_ird,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (ird)}$,
+baseline_gp_matern32_lnrho_rv_ird,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (ird)}$,

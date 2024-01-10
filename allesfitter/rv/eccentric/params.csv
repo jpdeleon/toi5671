@@ -1,0 +1,15 @@
+#name,value,fit,bounds,label,unit
+#companion b astrophysical params,,,,,
+b_epoch,2459685.81,1,trunc_normal -1000000000000.0 1000000000000.0 2459685.81 0.00024,$T_{0;b}$,$\mathrm{BJD}$
+b_period,3.3080,1,trunc_normal 0.1 7.0 3.3080 0.0007,$P_b$,$\mathrm{d}$
+b_K,0.240,1,uniform 0.100 0.600,$K_b$,$\mathrm{km/s}$
+b_f_c,0.0,1,uniform -1 1,$\sqrt{e_b} \cos{\omega_b}$,
+b_f_s,0.0,1,uniform -1 1,$\sqrt{e_b} \sin{\omega_b}$,
+b_sbratio_ird,0.0,0,trunc_normal 0 1 0.0 0.0,$J_{b; \mathrm{ird}}$,
+host_geom_albedo_ird,0.0,0,trunc_normal 0 1 0.0 0.0,$A_{\mathrm{geom}; host; \mathrm{ird}}$,
+host_geom_albedo_ird,0.0,0,trunc_normal 0 1 0.0 0.0,$A_{\mathrm{geom}; host; \mathrm{ird}}$,
+host_gdc_ird,0.0,0,trunc_normal 0 1 0.0 0.0,$Grav. dark._{b; \mathrm{ird}}$,
+ln_jitter_rv_ird,-3.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{jitter; ird}}$,$\ln{ \mathrm{km/s} }$
+#baseline per instrument,
+baseline_gp_matern32_lnsigma_rv_ird,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (ird)}$,
+baseline_gp_matern32_lnrho_rv_ird,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (ird)}$,

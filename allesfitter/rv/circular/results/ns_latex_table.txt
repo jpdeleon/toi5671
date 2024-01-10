@@ -1,0 +1,16 @@
+parameter & value & unit & fit/fixed \\ 
+\hline 
+\multicolumn{4}{c}{\textit{Fitted parameters}} \\ 
+\hline 
+$T_{0;b}$ & $2460102.547\pm0.084$ & $\mathrm{BJD}$& fit \\ 
+$P_b$ & $3.30800\pm0.00070$ & $\mathrm{d}$& fit \\ 
+$K_b$ & $0.208_{-0.052}^{+0.055}$ & $\mathrm{km/s}$& fit \\ 
+$\sqrt{e_b} \cos{\omega_b}$ & $0.0$ & & fixed \\ 
+$\sqrt{e_b} \sin{\omega_b}$ & $0.0$ & & fixed \\ 
+$J_{b; \mathrm{ird}}$ & $0.0$ & & fixed \\ 
+$A_{\mathrm{geom}; host; \mathrm{ird}}$ & $0.0$ & & fixed \\ 
+$A_{\mathrm{geom}; host; \mathrm{ird}}$ & $0.0$ & & fixed \\ 
+$Grav. dark._{b; \mathrm{ird}}$ & $0.0$ & & fixed \\ 
+$\ln{\sigma_\mathrm{jitter; ird}}$ & $-8.9\pm4.1$ & $\ln{ \mathrm{km/s} }$& fit \\ 
+$\mathrm{gp: \ln{\sigma} (ird)}$ & $-2.06_{-0.24}^{+0.28}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (ird)}$ & $-2.18_{-0.54}^{+0.63}$ & & fit \\ 

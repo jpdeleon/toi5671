@@ -1,0 +1,12 @@
+\newcommand{\bepoch}{$2460102.590_{-0.087}^{+0.076}$} %$T_{0;b}=2460102.590_{-0.087}^{+0.076}$ $\mathrm{BJD}$
+\newcommand{\bperiod}{$3.30810_{-0.00072}^{+0.00065}$} %$P_b=3.30810_{-0.00072}^{+0.00065}$ $\mathrm{d}$
+\newcommand{\bK}{$0.227_{-0.053}^{+0.061}$} %$K_b=0.227_{-0.053}^{+0.061}$ $\mathrm{km/s}$
+\newcommand{\bfc}{$-0.25_{-0.16}^{+0.19}$} %$\sqrt{e_b} \cos{\omega_b}=-0.25_{-0.16}^{+0.19}$ 
+\newcommand{\bfs}{$-0.39_{-0.24}^{+0.41}$} %$\sqrt{e_b} \sin{\omega_b}=-0.39_{-0.24}^{+0.41}$ 
+\newcommand{\bsbratioird}{$0.0$} %$J_{b; \mathrm{ird}}=0.0$ 
+\newcommand{\hostgeomalbedoird}{$0.0$} %$A_{\mathrm{geom}; host; \mathrm{ird}}=0.0$ 
+\newcommand{\hostgeomalbedoird}{$0.0$} %$A_{\mathrm{geom}; host; \mathrm{ird}}=0.0$ 
+\newcommand{\hostgdcird}{$0.0$} %$Grav. dark._{b; \mathrm{ird}}=0.0$ 
+\newcommand{\lnjitterrvird}{$-8.4_{-4.4}^{+5.1}$} %$\ln{\sigma_\mathrm{jitter; ird}}=-8.4_{-4.4}^{+5.1}$ $\ln{ \mathrm{km/s} }$
+\newcommand{\baselinegpmaternthreetwolnsigmarvird}{$-2.17\pm0.34$} %$\mathrm{gp: \ln{\sigma} (ird)}=-2.17\pm0.34$ 
+\newcommand{\baselinegpmaternthreetwolnrhorvird}{$-2.13_{-0.71}^{+1.7}$} %$\mathrm{gp: \ln{\rho} (ird)}=-2.13_{-0.71}^{+1.7}$ 

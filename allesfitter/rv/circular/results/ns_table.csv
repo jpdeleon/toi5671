@@ -1,0 +1,14 @@
+#name,median,lower_error,upper_error,label,unit
+#Fitted parameters,,,
+b_epoch,2460102.546711075,0.08138680458068848,0.08421089174225926,$T_{0;b}$,$\mathrm{BJD}$
+b_period,3.307999173498677,0.0007019036350981445,0.0006951492486235722,$P_b$,$\mathrm{d}$
+b_K,0.20767198130500686,0.051776224975259244,0.0547404927859112,$K_b$,$\mathrm{km/s}$
+b_f_c,0.0,(fixed),(fixed),$\sqrt{e_b} \cos{\omega_b}$,
+b_f_s,0.0,(fixed),(fixed),$\sqrt{e_b} \sin{\omega_b}$,
+b_sbratio_ird,0.0,(fixed),(fixed),$J_{b; \mathrm{ird}}$,
+host_geom_albedo_ird,0.0,(fixed),(fixed),$A_{\mathrm{geom}; host; \mathrm{ird}}$,
+host_geom_albedo_ird,0.0,(fixed),(fixed),$A_{\mathrm{geom}; host; \mathrm{ird}}$,
+host_gdc_ird,0.0,(fixed),(fixed),$Grav. dark._{b; \mathrm{ird}}$,
+ln_jitter_rv_ird,-8.946010961631952,4.094937346403272,4.0961606005980435,$\ln{\sigma_\mathrm{jitter; ird}}$,$\ln{ \mathrm{km/s} }$
+baseline_gp_matern32_lnsigma_rv_ird,-2.0645562687206773,0.2424842102229965,0.2797013821848058,$\mathrm{gp: \ln{\sigma} (ird)}$,
+baseline_gp_matern32_lnrho_rv_ird,-2.1816758633948092,0.5435925638046011,0.6326766460020203,$\mathrm{gp: \ln{\rho} (ird)}$,
