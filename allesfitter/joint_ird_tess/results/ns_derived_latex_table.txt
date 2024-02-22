@@ -1,0 +1,26 @@
+Parameter & Value & Source \\ 
+\hline 
+\multicolumn{3}{c}{\textit{Derived parameters}} \\ 
+\hline 
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$ & $0.0612_{-0.0064}^{+0.0059}$ & derived \\ 
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$ & $16.3_{-1.4}^{+1.9}$ & derived \\ 
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$ & $0.0172\pm0.0021$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$) & $12.62_{-0.60}^{+0.63}$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$) & $1.126_{-0.053}^{+0.057}$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$) & $6.69_{-0.59}^{+0.80}$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ (AU) & $0.0311_{-0.0027}^{+0.0037}$ & derived \\ 
+Inclination b; $i_\mathrm{b}$ (deg) & $88.50_{-0.62}^{+0.83}$ & derived \\ 
+Mass ratio b; $q_\mathrm{b}$ & $0.00217_{-0.00052}^{+0.00065}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$) & $288_{-71}^{+88}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$) & $0.91_{-0.22}^{+0.28}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$) & $0.00087_{-0.00021}^{+0.00027}$ & derived \\ 
+Impact parameter b; $b_\mathrm{tra;b}$ & $0.43_{-0.22}^{+0.13}$ & derived \\ 
+Total transit duration b; $T_\mathrm{tot;b}$ (h) & $1.86_{-0.14}^{+0.13}$ & derived \\ 
+Full-transit duration b; $T_\mathrm{full;b}$ (h) & $0.88_{-0.18}^{+0.11}$ & derived \\ 
+Companion density b; $\rho_\mathrm{b}$ (cgs) & $0.78_{-0.21}^{+0.28}$ & derived \\ 
+Companion surface gravity b; $g_\mathrm{b}$ (cgs) & $1670_{-480}^{+650}$ & derived \\ 
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K) & $539\pm36$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; tess}$ (ppt) & $91.9\pm5.9$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; tess}$ (ppt) & $91.9\pm5.9$ & derived \\ 
+Limb darkening; $u_\mathrm{1; tess}$ & $0.43_{-0.12}^{+0.11}$ & derived \\ 
+Limb darkening; $u_\mathrm{2; tess}$ & $0.24_{-0.10}^{+0.12}$ & derived \\ 

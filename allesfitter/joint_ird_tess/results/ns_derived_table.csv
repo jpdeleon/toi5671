@@ -1,0 +1,23 @@
+#property,value,lower_error,upper_error,source
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$,0.06123121680542392,0.006376378257250161,0.005904743486661361,derived
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$,16.33153891509661,1.4363918784064822,1.8983935178543696,derived
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$,0.017219454078404008,0.00208412106192948,0.0020979549723341186,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$),12.618662486019032,0.5981506546918194,0.6345912463757752,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$),1.125763598753399,0.053363518864906645,0.056614536290904294,derived
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$),6.694836217757345,0.5868826533172875,0.7970435079309119,derived
+Semi-major axis b; $a_\mathrm{b}$ (AU),0.03113411664818425,0.0027292785652786485,0.0037066247391951378,derived
+Inclination b; $i_\mathrm{b}$ (deg),88.4964505893601,0.6215696648375513,0.8330945640846608,derived
+Mass ratio b; $q_\mathrm{b}$,0.0021658304368043007,0.000520549808464892,0.0006528712074851343,derived
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$),288.40070309545126,70.58029628258586,88.33920424065553,derived
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$),0.9074100901976563,0.2220704468766902,0.27794622005991476,derived
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$),0.0008662084399482677,0.00021198716812347973,0.0002653258590227638,derived
+Impact parameter b; $b_\mathrm{tra;b}$,0.4300764060492458,0.2194063076032594,0.1333305163831695,derived
+Total transit duration b; $T_\mathrm{tot;b}$ (h),1.862036318490653,0.13686811385988706,0.12526161388473112,derived
+Full-transit duration b; $T_\mathrm{full;b}$ (h),0.8782927617970617,0.175514304835113,0.11427540693376148,derived
+Companion density b; $\rho_\mathrm{b}$ (cgs),0.7833392113716808,0.2061912958513803,0.2830117577256439,derived
+Companion surface gravity b; $g_\mathrm{b}$ (cgs),1667.4654800360522,480.603131389998,654.9010866721501,derived
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K),539.0565772486532,35.92701666052801,35.48907850106514,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; tess}$ (ppt),91.92828854792312,5.90542272107308,5.85732931971495,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; tess}$ (ppt),91.92828854792312,5.90542272107308,5.85732931971495,derived
+Limb darkening; $u_\mathrm{1; tess}$,0.43219038016851985,0.12266234398816972,0.10860678652020661,derived
+Limb darkening; $u_\mathrm{2; tess}$,0.24462316264219175,0.10463789657547315,0.11853740166616461,derived

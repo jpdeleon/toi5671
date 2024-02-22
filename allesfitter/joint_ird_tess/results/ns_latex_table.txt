@@ -1,0 +1,25 @@
+parameter & value & unit & fit/fixed \\ 
+\hline 
+\multicolumn{4}{c}{\textit{Fitted parameters}} \\ 
+\hline 
+$R_b / R_\star$ & $0.282_{-0.011}^{+0.013}$ & & fit \\ 
+$(R_\star + R_b) / a_b$ & $0.0785_{-0.0084}^{+0.0079}$ & & fit \\ 
+$\cos{i_b}$ & $0.026_{-0.014}^{+0.011}$ & & fit \\ 
+$T_{0;b}$ & $2459450.89830\pm0.00098$ & BJD& fit \\ 
+$P_b$ & $3.3078241_{-0.0000076}^{+0.0000066}$ & d& fit \\ 
+$K_b$ & $0.225_{-0.051}^{+0.058}$ & $\mathrm{km/s}$& fit \\ 
+$\sqrt{e_b} \cos{\omega_b}$ & $0.0$ & & fixed \\ 
+$\sqrt{e_b} \sin{\omega_b}$ & $0.0$ & & fixed \\ 
+$D_\mathrm{0; tess}$ & $0.0$ & & fixed \\ 
+$q_{1; \mathrm{tess}}$ & $0.460_{-0.029}^{+0.027}$ & & fit \\ 
+$q_{2; \mathrm{tess}}$ & $0.319_{-0.088}^{+0.077}$ & & fit \\ 
+$J_{b; \mathrm{tess}}$ & $0.0$ & & fixed \\ 
+$A_{\mathrm{geom}; host; \mathrm{tess}}$ & $0.0$ & & fixed \\ 
+$A_{\mathrm{geom}; b; \mathrm{tess}}$ & $0.0$ & & fixed \\ 
+$Grav. dark._{b; \mathrm{tess}}$ & $0.0$ & & fixed \\ 
+$\ln{\sigma_\mathrm{tess}}$ & $-3.185_{-0.032}^{+0.035}$ & $\ln{ \mathrm{rel. flux.} }$& fit \\ 
+$\ln{\sigma_\mathrm{jitter; ird}}$ & $-8.9\pm3.9$ & $\ln{ \mathrm{km/s} }$& fit \\ 
+$\mathrm{gp: \ln{\sigma} (tess)}$ & $-11.0_{-2.8}^{+3.5}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (tess)}$ & $6.6_{-8.7}^{+5.2}$ & & fit \\ 
+$\mathrm{gp: \ln{\sigma} (ird)}$ & $-2.08_{-0.22}^{+0.26}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (ird)}$ & $-2.20_{-0.54}^{+0.57}$ & & fit \\ 

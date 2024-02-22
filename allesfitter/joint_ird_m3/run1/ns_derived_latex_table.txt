@@ -1,0 +1,38 @@
+Parameter & Value & Source \\ 
+\hline 
+\multicolumn{3}{c}{\textit{Derived parameters}} \\ 
+\hline 
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$ & $0.05677_{-0.00046}^{+0.00059}$ & derived \\ 
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$ & $17.61_{-0.18}^{+0.14}$ & derived \\ 
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$ & $0.01544_{-0.00017}^{+0.00023}$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$) & $12.17\pm0.31$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$) & $1.086\pm0.027$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$) & $7.22\pm0.19$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ (AU) & $0.03357\pm0.00089$ & derived \\ 
+Inclination b; $i_\mathrm{b}$ (deg) & $89.55_{-0.23}^{+0.26}$ & derived \\ 
+Mass ratio b; $q_\mathrm{b}$ & $0.00192_{-0.00042}^{+0.00046}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$) & $254_{-57}^{+63}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$) & $0.80_{-0.18}^{+0.20}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$) & $0.00076_{-0.00017}^{+0.00019}$ & derived \\ 
+Impact parameter b; $b_\mathrm{tra;b}$ & $0.138_{-0.080}^{+0.067}$ & derived \\ 
+Total transit duration b; $T_\mathrm{tot;b}$ (h) & $1.8155_{-0.0096}^{+0.010}$ & derived \\ 
+Full-transit duration b; $T_\mathrm{full;b}$ (h) & $1.025_{-0.015}^{+0.011}$ & derived \\ 
+Companion density b; $\rho_\mathrm{b}$ (cgs) & $0.77_{-0.18}^{+0.21}$ & derived \\ 
+Companion surface gravity b; $g_\mathrm{b}$ (cgs) & $1940_{-430}^{+460}$ & derived \\ 
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K) & $521\pm24$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; g}$ (ppt) & $91.3_{-1.6}^{+1.7}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; g}$ (ppt) & $91.3_{-1.6}^{+1.7}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; r}$ (ppt) & $90.1_{-1.4}^{+1.1}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; r}$ (ppt) & $90.1_{-1.4}^{+1.1}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; i}$ (ppt) & $86.95_{-0.79}^{+0.74}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; i}$ (ppt) & $86.95_{-0.79}^{+0.74}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; z}$ (ppt) & $87.1_{-1.5}^{+2.0}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; z}$ (ppt) & $87.1_{-1.5}^{+2.0}$ & derived \\ 
+Limb darkening; $u_\mathrm{1; g}$ & $0.525_{-0.098}^{+0.11}$ & derived \\ 
+Limb darkening; $u_\mathrm{2; g}$ & $0.16_{-0.11}^{+0.10}$ & derived \\ 
+Limb darkening; $u_\mathrm{1; r}$ & $0.447\pm0.073$ & derived \\ 
+Limb darkening; $u_\mathrm{2; r}$ & $0.231\pm0.076$ & derived \\ 
+Limb darkening; $u_\mathrm{1; i}$ & $0.271\pm0.068$ & derived \\ 
+Limb darkening; $u_\mathrm{2; i}$ & $0.391_{-0.072}^{+0.076}$ & derived \\ 
+Limb darkening; $u_\mathrm{1; z}$ & $0.29\pm0.10$ & derived \\ 
+Limb darkening; $u_\mathrm{2; z}$ & $0.37\pm0.11$ & derived \\ 

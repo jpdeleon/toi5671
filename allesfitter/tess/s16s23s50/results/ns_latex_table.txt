@@ -1,0 +1,17 @@
+parameter & value & unit & fit/fixed \\ 
+\hline 
+\multicolumn{4}{c}{\textit{Fitted parameters}} \\ 
+\hline 
+$R_b / R_\star$ & $0.276_{-0.021}^{+0.017}$ & & fit \\ 
+$(R_\star + R_b) / a_b$ & $0.0804_{-0.0086}^{+0.0066}$ & & fit \\ 
+$\cos{i_b}$ & $0.024_{-0.016}^{+0.012}$ & & fit \\ 
+$T_{0;b}$ & $2459216.0432\pm0.0015$ & BJD& fit \\ 
+$P_b$ & $3.307820\pm0.000012$ & d& fit \\ 
+$\sqrt{e_b} \cos{\omega_b}$ & $0.0$ & & fixed \\ 
+$\sqrt{e_b} \sin{\omega_b}$ & $0.0$ & & fixed \\ 
+$q_{1; \mathrm{tess}}$ & $0.56_{-0.34}^{+0.30}$ & & fit \\ 
+$q_{2; \mathrm{tess}}$ & $0.55_{-0.36}^{+0.31}$ & & fit \\ 
+$\log{\sigma_\mathrm{tess}}$ & $-3.183\pm0.034$ & rel. flux& fit \\ 
+$\mathrm{gp ln sigma (tess)}$ & $0.0001\pm0.0023$ & & fit \\ 
+$\mathrm{gp ln sigma (tess)}$ & $-10.0\pm3.4$ & & fit \\ 
+$\mathrm{gp ln rho (tess)}$ & $7.0\pm5.5$ & & fit \\ 
