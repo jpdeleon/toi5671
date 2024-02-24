@@ -1,2 +1,0 @@
-\newcommand{\be}{$0.29_{-0.17}^{+0.19}$} %Eccentricity b; $e_\mathrm{b}$ = $0.29_{-0.17}^{+0.19}$
-\newcommand{\bw}{$234_{-60.}^{+26}$} %Argument of periastron b; $w_\mathrm{b}$ (deg) = $234_{-60.}^{+26}$
