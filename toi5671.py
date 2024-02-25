@@ -19,6 +19,7 @@ from pytransit import QuadraticModel
 from ldtk import LDPSetCreator, BoxcarFilter
 import seaborn as sb
 from numba import njit
+from scipy import stats
 
 sb.set(
     context="paper",
@@ -31,6 +32,7 @@ sb.set(
 sb.set_style({"xtick.direction": "in", "ytick.direction": "in"})
 sb.set_context(rc={"lines.markeredgewidth": 1})
 pl.rcParams["font.size"] = 26
+pl.rcParams["figure.dpi"] = 150
 
 os.environ["OMP_NUM_THREADS"] = "1"
 os.nice(19)
@@ -629,7 +631,7 @@ class TransitFit:
         tdur0 = self.planet_params['tdur']
         a_Rs0 = self.planet_params['a_Rs']
         # tc shouldn't be more or less than half a period
-        if abs(t0-epoch0[0]) > period0[0]/2:
+        if abs(t0-epoch0[0]) > 0.1:
             if self.DEBUG:
                     errmsg = f"Error (tc more or less than half of period): "
                     errmsg += f"abs({t0:.4f}-{epoch0[0]:.4f}) > {period0[0]/2:.4f}"
@@ -1874,3 +1876,69 @@ def lnlike_normal(o, m, e):
 @njit(cache=False)
 def lnlike_normal_s(o, m, e):
     return -o.size*np.log(e) -0.5*o.size*LOG_TWO_PI - 0.5*np.sum((o-m)**2)/e**2
+
+
+def plot_tls_results(time, flux, results, toffset=2457000, figsize=(10,5)):
+
+    fig, axs = plt.subplot_mosaic('''
+                                AAA
+                                BCD
+                                ''', tight_layout=True, figsize=figsize)
+    ax = axs['A']
+    ax.plot(time-toffset, flux)
+    ax.plot(results.model_lightcurve_time-toffset, results.model_lightcurve_model)
+    ax.set_xlabel(f'Time (BJD-{toffset})')
+    ax.set_ylabel('Relative flux');
+    
+    ax = axs['B']
+    ax.axvline(results.period, alpha=0.4, lw=3)
+    ax.set_xlim(np.min(results.periods), np.max(results.periods))
+    for n in range(2, 10):
+        ax.axvline(n*results.period, alpha=0.4, lw=1, linestyle="dashed")
+        ax.axvline(results.period / n, alpha=0.4, lw=1, linestyle="dashed")
+    ax.set_ylabel(r'SDE')
+    ax.set_xlabel('Period (days)')
+    ax.plot(results.periods, results.power, color='black', lw=0.5)
+    ax.set_xlim(0, max(results.periods));
+    
+    ax = axs['C']
+    bins = 500
+    bin_means, bin_edges, binnumber = stats.binned_statistic(
+        results.folded_phase,
+        results.folded_y,
+        statistic='mean',
+        bins=bins)
+    bin_stds, _, _ = stats.binned_statistic(
+        results.folded_phase,
+        results.folded_y,
+        statistic='std',
+        bins=bins)
+    bin_width = (bin_edges[1] - bin_edges[0])
+    bin_centers = bin_edges[1:] - bin_width/2
+    
+    ax.plot(results.model_folded_phase, results.model_folded_model, color='C0', lw=2)
+    ax.scatter(results.folded_phase, results.folded_y, color='k', marker='.', alpha=0.3, zorder=2)
+    ax.errorbar(
+        bin_centers,
+        bin_means,
+        yerr=bin_stds/2,
+        xerr=bin_width/2,
+        marker='.',
+        markersize=4,
+        color='black',
+        #capsize=10,
+        linestyle='none')
+    ax.set_xlim(0.48, 0.52)
+    ax.ticklabel_format(useOffset=False)
+    ax.set_xlabel('Phase')
+    ax.set_ylabel('Relative flux');
+    
+    ax = axs['D']
+    ax.errorbar(np.array(results.transit_times)-toffset, 
+                results.transit_depths, 
+                yerr=results.transit_depths_uncertainties, 
+                marker='.', ls='')
+    ax.set_xlabel(f'Transit time (BJD-{toffset})')
+    ax.set_ylabel('Relative flux');
+    ax.axhline(results.depth, 0, 1, ls='--')
+    return fig

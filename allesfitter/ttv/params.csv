@@ -3,7 +3,8 @@
 b_rr,0.2848,1,uniform 0 0.3079,$R_b / R_\star$,
 b_rsuma,0.09,1,uniform 0.0214 0.09,$(R_\star + R_b) / a_b$,
 b_cosi,0.0,1,uniform 0.0 0.3,$\cos{i_b}$,
-b_epoch,2459216.0432,1,normal 2459216.0432 0.0015,$T_{0;b}$,BJD
+#b_epoch,2459216.0432,1,normal 2459216.0432 0.0015,$T_{0;b}$,BJD
+b_epoch,2459401.279885,1,normal 2459401.279885 0.00037,$T_{0;b}$,BJD
 b_period,3.30783,1,normal 3.30783 0.0001,$P_b$,d
 #b_period,1.653915,1,normal 1.653915 0.0001,$P_b$,d
 #b_K,0.240,1,uniform 0.100 0.600,$K_b$,$\mathrm{km/s}$
