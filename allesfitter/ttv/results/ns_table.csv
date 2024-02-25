@@ -1,0 +1,82 @@
+#name,median,lower_error,upper_error,label,unit
+#Fitted parameters,,,
+b_rr,0.274295322500529,0.0010258946613884712,0.0010394297156084975,$R_b / R_\star$,
+b_rsuma,0.07182430248885217,0.0007183245332488958,0.000772339973618183,$(R_\star + R_b) / a_b$,
+b_cosi,0.009161514874394828,0.004000782766470422,0.0030815342776498514,$\cos{i_b}$,
+b_epoch,2459401.280642662,0.0035684541799128056,0.003790251910686493,$T_{0;b}$,BJD
+b_period,3.307742362399439,1.957318483736259e-05,2.0854321292507194e-05,$P_b$,d
+host_ldc_q1_muscat3_gp,0.7,(fixed),(fixed),$q_{1; \mathrm{muscat3_gp}}$,
+host_ldc_q2_muscat3_gp,0.08,(fixed),(fixed),$q_{2; \mathrm{muscat3_gp}}$,
+host_ldc_q1_lco1m_gp,0.7,(fixed),(fixed),$q_{1; \mathrm{lco1m_gp}}$,
+host_ldc_q2_lco1m_gp,0.08,(fixed),(fixed),$q_{2; \mathrm{lco1m_gp}}$,
+host_ldc_q1_lco1m_V,0.53,(fixed),(fixed),$q_{1; \mathrm{lco1m_V}}$,
+host_ldc_q2_lco1m_V,0.38,(fixed),(fixed),$q_{2; \mathrm{lco1m_V}}$,
+host_ldc_q1_muscat3_rp,0.51,(fixed),(fixed),$q_{1; \mathrm{muscat3_rp}}$,
+host_ldc_q2_muscat3_rp,0.15,(fixed),(fixed),$q_{2; \mathrm{muscat3_rp}}$,
+host_ldc_q1_muscat3_ip,0.42,(fixed),(fixed),$q_{1; \mathrm{muscat3_ip}}$,
+host_ldc_q2_muscat3_ip,0.15,(fixed),(fixed),$q_{2; \mathrm{muscat3_ip}}$,
+host_ldc_q1_keplercam_ip,0.42,(fixed),(fixed),$q_{1; \mathrm{keplercam_ip}}$,
+host_ldc_q2_keplercam_ip,0.15,(fixed),(fixed),$q_{2; \mathrm{keplercam_ip}}$,
+host_ldc_q1_muscat3_zs,0.36,(fixed),(fixed),$q_{1; \mathrm{muscat3_zs}}$,
+host_ldc_q2_muscat3_zs,0.15,(fixed),(fixed),$q_{2; \mathrm{muscat3_zs}}$,
+host_ldc_q1_lco0.4m_zs_2,0.36,(fixed),(fixed),$q_{1; \mathrm{lco0.4m_zs_2}}$,
+host_ldc_q2_lco0.4m_zs_2,0.15,(fixed),(fixed),$q_{2; \mathrm{lco0.4m_zs_2}}$,
+host_ldc_q1_tess,0.27,(fixed),(fixed),$q_{1; \mathrm{tess}}$,
+host_ldc_q2_tess,0.26,(fixed),(fixed),$q_{2; \mathrm{tess}}$,
+ln_err_flux_muscat3_gp,-4.554859156592757,0.056240238655001384,0.056154748701316315,$\ln{\sigma_\mathrm{muscat3_gp}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_speculoos_gp,-8.797368192099487,3.9770045585682823,4.800575631181768,$\ln{\sigma_\mathrm{speculoos_gp}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_lco1m_gp,-5.231475800254312,0.1112290124701909,0.12518323760063765,$\ln{\sigma_\mathrm{lco1m_gp}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_lco1m_V,-5.636468000555357,0.1289886740729589,0.13133426011126836,$\ln{\sigma_\mathrm{lco1m_V}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_muscat3_rp,-5.031387003952885,0.041095086791134605,0.04140385620072351,$\ln{\sigma_\mathrm{muscat3_rp}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_muscat3_rp,-5.031387003952885,0.041095086791134605,0.04140385620072351,$\ln{\sigma_\mathrm{muscat3_rp}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_muscat3_ip,-5.134855681390155,0.03195703514033532,0.03163467464360714,$\ln{\sigma_\mathrm{muscat3_ip}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_keplercam_ip,-5.849080686237386,0.11788093338085304,0.11982508450629581,$\ln{\sigma_\mathrm{keplercam_ip}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_muscat3_zs,-5.399134728061959,0.057172960238485615,0.048885228403745984,$\ln{\sigma_\mathrm{muscat3_zs}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_trappist_Iz_1,-7.684531368089575,4.587479243344847,4.853615557846899,$\ln{\sigma_\mathrm{trappist_Iz_1}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_trappist_Iz_2,-9.297563796399896,3.739819550252225,4.845536327845471,$\ln{\sigma_\mathrm{trappist_Iz_2}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_speculoos_zs,-7.921226765930595,4.285819177208398,4.516387192023228,$\ln{\sigma_\mathrm{speculoos_Iz}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_lco0.4m_zs_2,-3.954950502023806,0.11674223589402644,0.1278391550319533,$\ln{\sigma_\mathrm{lco0.4m_zs_2}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_tess,-3.274005895913378,0.01977273476964747,0.020934992071383718,$\ln{\sigma_\mathrm{tess}}$,$\ln{ \mathrm{rel. flux.} }$
+baseline_gp_matern32_lnsigma_flux_muscat3_gp,-4.4340416543430035,0.5253387706385588,0.6627267066594182,$\mathrm{gp: \ln{\sigma} (muscat3_gp)}$,
+baseline_gp_matern32_lnrho_flux_muscat3_gp,2.5586980049250023,3.4841953614763943,5.60843346827912,$\mathrm{gp: \ln{\rho} (muscat3_gp)}$,
+baseline_gp_matern32_lnsigma_flux_lco1m_gp,-4.4723911487246895,0.742742238373701,1.1166622639116053,$\mathrm{gp: \ln{\sigma} (lco1m_gp)}$,
+baseline_gp_matern32_lnrho_flux_lco1m_gp,5.195277621037217,4.669229987261424,5.614882388442474,$\mathrm{gp: \ln{\rho} (lco1m_gp)}$,
+baseline_gp_matern32_lnsigma_flux_lco1m_V,-4.408773062334189,0.555347738470342,0.7405568536957983,$\mathrm{gp: \ln{\sigma} (lco1m_V)}$,
+baseline_gp_matern32_lnrho_flux_lco1m_V,-1.5675306716427322,0.7663506120751009,0.9063958735301192,$\mathrm{gp: \ln{\rho} (lco1m_V)}$,
+baseline_gp_matern32_lnsigma_flux_muscat3_rp,-4.521183917115879,0.5334524584149101,0.8205989734690995,$\mathrm{gp: \ln{\sigma} (muscat3_rp)}$,
+baseline_gp_matern32_lnrho_flux_muscat3_rp,-1.5717239960813227,1.1976565523974223,2.0699213224671027,$\mathrm{gp: \ln{\rho} (muscat3_rp)}$,
+baseline_gp_matern32_lnsigma_flux_muscat3_ip,-4.416081877573493,0.7216654170431092,1.0900085956196754,$\mathrm{gp: \ln{\sigma} (muscat3_ip)}$,
+baseline_gp_matern32_lnrho_flux_muscat3_ip,2.714139277209643,2.463579307934605,2.8431105652669544,$\mathrm{gp: \ln{\rho} (muscat3_ip)}$,
+baseline_gp_matern32_lnsigma_flux_keplercam_ip,-4.847475599949561,0.3592383422820493,0.49218292572406597,$\mathrm{gp: \ln{\sigma} (keplercam_ip)}$,
+baseline_gp_matern32_lnrho_flux_keplercam_ip,-3.79035079495565,0.4800283313708764,0.5300530499551375,$\mathrm{gp: \ln{\rho} (keplercam_ip)}$,
+baseline_gp_matern32_lnsigma_flux_muscat3_zs,-5.0867741849281725,0.27522871076360644,0.41200670990549604,$\mathrm{gp: \ln{\sigma} (muscat3_zs)}$,
+baseline_gp_matern32_lnrho_flux_muscat3_zs,-3.1743352143896004,1.127362202099027,0.8601842218886566,$\mathrm{gp: \ln{\rho} (muscat3_zs)}$,
+baseline_gp_matern32_lnsigma_flux_lco0.4m_zs_2,-3.422079042088418,0.6433867745796098,0.903814884413098,$\mathrm{gp: \ln{\sigma} (lco0.4m_zs_2)}$,
+baseline_gp_matern32_lnrho_flux_lco0.4m_zs_2,5.101782239570422,4.344222098647171,5.356467752478977,$\mathrm{gp: \ln{\rho} (lco0.4m_zs_2)}$,
+baseline_gp_matern32_lnsigma_flux_tess,-10.203878111004427,2.94286935664071,2.9240154869723023,$\mathrm{gp: \ln{\sigma} (tess)}$,
+baseline_gp_matern32_lnrho_flux_tess,-1.9704386803162013,8.409300942125267,9.600195931582666,$\mathrm{gp: \ln{\rho} (tess)}$,
+b_ttv_transit_1,-0.017756981755674653,0.008882588339683233,0.008919737324386624,TTV$_\mathrm{b;1}$,d
+b_ttv_transit_2,-0.010531050617788237,0.010539579449972733,0.011877963040442488,TTV$_\mathrm{b;2}$,d
+b_ttv_transit_3,-0.013762749890384507,0.008853644511838232,0.009298676153080304,TTV$_\mathrm{b;3}$,d
+b_ttv_transit_4,-0.0009489834775524286,0.008399103502827717,0.008560900488577577,TTV$_\mathrm{b;4}$,d
+b_ttv_transit_5,-0.011209747734378231,0.009407783049983631,0.008941590307828193,TTV$_\mathrm{b;5}$,d
+b_ttv_transit_6,-0.013906522952187889,0.00956710893306386,0.010726709646088182,TTV$_\mathrm{b;6}$,d
+b_ttv_transit_7,-0.012247342784470566,0.009829651805337014,0.009829983267820405,TTV$_\mathrm{b;7}$,d
+b_ttv_transit_8,-0.014503291946306535,0.007158261506494026,0.0073027278959001685,TTV$_\mathrm{b;8}$,d
+b_ttv_transit_9,-0.020068916690508254,0.01064451182594306,0.010586130244534336,TTV$_\mathrm{b;9}$,d
+b_ttv_transit_10,-0.009593800835402608,0.007920156306522444,0.007887416907704434,TTV$_\mathrm{b;10}$,d
+b_ttv_transit_11,-0.016802743466137943,0.006742036131072507,0.00686312345829615,TTV$_\mathrm{b;11}$,d
+b_ttv_transit_12,-0.009197664145583428,0.006895982741289726,0.006647208168195737,TTV$_\mathrm{b;12}$,d
+b_ttv_transit_13,-0.013085981314309353,0.006933705985411723,0.006660605467602873,TTV$_\mathrm{b;13}$,d
+b_ttv_transit_14,-0.02227091212940903,0.009656313014885495,0.01276043395232179,TTV$_\mathrm{b;14}$,d
+b_ttv_transit_15,-0.01330614849871127,0.007123945262370923,0.006878565478625934,TTV$_\mathrm{b;15}$,d
+b_ttv_transit_16,0.03450342503461298,0.005020707687964809,0.004861386655376276,TTV$_\mathrm{b;16}$,d
+b_ttv_transit_17,0.0010623994530195163,0.004706300049989093,0.004900057665980425,TTV$_\mathrm{b;17}$,d
+b_ttv_transit_18,0.0044798398463423705,0.005042393488028735,0.005048792128137872,TTV$_\mathrm{b;18}$,d
+b_ttv_transit_19,0.011096466405676478,0.005310408068289266,0.005143576048414353,TTV$_\mathrm{b;19}$,d
+b_ttv_transit_20,0.008243213991102422,0.004902991303014563,0.00476159195409559,TTV$_\mathrm{b;20}$,d
+b_ttv_transit_21,0.0068965960147182315,0.003988836532126644,0.004050865601411394,TTV$_\mathrm{b;21}$,d
+b_ttv_transit_22,0.00876229809136661,0.004438955131234504,0.004369876599128089,TTV$_\mathrm{b;22}$,d
+b_ttv_transit_23,0.007734765873257235,0.004041176665336715,0.004105115712346542,TTV$_\mathrm{b;23}$,d
+b_ttv_transit_24,0.014071658856966124,0.004761928654214667,0.005093360431787486,TTV$_\mathrm{b;24}$,d
+b_ttv_transit_25,0.015083026215049422,0.0048816823663861975,0.005237941239788463,TTV$_\mathrm{b;25}$,d

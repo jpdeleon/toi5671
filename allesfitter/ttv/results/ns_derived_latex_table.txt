@@ -1,0 +1,52 @@
+Parameter & Value & Source \\ 
+\hline 
+\multicolumn{3}{c}{\textit{Derived parameters}} \\ 
+\hline 
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$ & $0.05636_{-0.00054}^{+0.00058}$ & derived \\ 
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$ & $17.74_{-0.18}^{+0.17}$ & derived \\ 
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$ & $0.01546_{-0.00018}^{+0.00020}$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$) & $12.27\pm0.30$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$) & $1.094\pm0.027$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$) & $7.27\pm0.19$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ (AU) & $0.03381\pm0.00089$ & derived \\ 
+Inclination b; $i_\mathrm{b}$ (deg) & $89.48_{-0.18}^{+0.23}$ & derived \\ 
+Impact parameter b; $b_\mathrm{tra;b}$ & $0.163_{-0.071}^{+0.053}$ & derived \\ 
+Total transit duration b; $T_\mathrm{tot;b}$ (h) & $1.8018\pm0.0098$ & derived \\ 
+Full-transit duration b; $T_\mathrm{full;b}$ (h) & $1.0076_{-0.012}^{+0.0095}$ & derived \\ 
+Epoch occultation b; $T_\mathrm{0;occ;b}$ & $2459402.9345_{-0.0036}^{+0.0038}$ & derived \\ 
+Impact parameter occultation b; $b_\mathrm{occ;b}$ & $0.163_{-0.071}^{+0.053}$ & derived \\ 
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K) & $519\pm24$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_gp}$ (ppt) & $89.22\pm0.62$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_gp}$ (ppt) & $89.22\pm0.62$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_gp}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_gp}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_rp}$ (ppt) & $88.27_{-0.65}^{+0.58}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_rp}$ (ppt) & $88.27_{-0.65}^{+0.58}$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_rp}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_rp}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco1m_gp}$ (ppt) & $89.19_{-0.58}^{+0.65}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco1m_gp}$ (ppt) & $89.19_{-0.58}^{+0.65}$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; lco1m_gp}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; lco1m_gp}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco1m_V}$ (ppt) & $93.86\pm0.69$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco1m_V}$ (ppt) & $93.86\pm0.69$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; lco1m_V}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; lco1m_V}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_ip}$ (ppt) & $86.84_{-0.58}^{+0.61}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_ip}$ (ppt) & $86.84_{-0.58}^{+0.61}$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_ip}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_ip}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; keplercam_ip}$ (ppt) & $75.27_{-0.56}^{+0.49}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; keplercam_ip}$ (ppt) & $75.27_{-0.56}^{+0.49}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_zs}$ (ppt) & $85.91\pm0.58$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_zs}$ (ppt) & $85.91\pm0.58$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_zs}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_zs}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco0.4m_zs_2}$ (ppt) & $85.93_{-0.61}^{+0.56}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco0.4m_zs_2}$ (ppt) & $85.93_{-0.61}^{+0.56}$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; lco0.4m_zs_2}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; lco0.4m_zs_2}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; tess}$ (ppt) & $85.79_{-0.57}^{+0.62}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; tess}$ (ppt) & $85.79_{-0.57}^{+0.62}$ & derived \\ 
+Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; tess}$ (ppt) & $0.0\pm0.0$ & derived \\ 
+Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; tess}$ (ppt) & $0.0\pm0.0$ & derived \\ 
