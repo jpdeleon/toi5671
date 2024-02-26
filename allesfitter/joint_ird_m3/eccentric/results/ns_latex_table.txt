@@ -1,0 +1,35 @@
+parameter & value & unit & fit/fixed \\ 
+\hline 
+\multicolumn{4}{c}{\textit{Fitted parameters}} \\ 
+\hline 
+$R_b / R_\star$ & $0.27444\pm0.00072$ & & fit \\ 
+$(R_\star + R_b) / a_b$ & $0.071734\pm0.000096$ & & fit \\ 
+$\cos{i_b}$ & $0.0092_{-0.0035}^{+0.0029}$ & & fit \\ 
+$T_{0;b}$ & $2459963.60953\pm0.00019$ & BJD& fit \\ 
+$P_b$ & $3.3078210\pm0.0000026$ & d& fit \\ 
+$K_b$ & $0.227\pm0.054$ & $\mathrm{km/s}$& fit \\ 
+$\sqrt{e_b} \cos{\omega_b}$ & $-0.18_{-0.21}^{+0.23}$ & & fit \\ 
+$\sqrt{e_b} \sin{\omega_b}$ & $-0.037_{-0.049}^{+0.058}$ & & fit \\ 
+$q_{1; \mathrm{g}}$ & $0.7$ & & fixed \\ 
+$q_{2; \mathrm{g}}$ & $0.08$ & & fixed \\ 
+$q_{1; \mathrm{r}}$ & $0.51$ & & fixed \\ 
+$q_{2; \mathrm{r}}$ & $0.15$ & & fixed \\ 
+$q_{1; \mathrm{i}}$ & $0.42$ & & fixed \\ 
+$q_{2; \mathrm{i}}$ & $0.15$ & & fixed \\ 
+$q_{1; \mathrm{z}}$ & $0.36$ & & fixed \\ 
+$q_{2; \mathrm{z}}$ & $0.15$ & & fixed \\ 
+$\ln{\sigma_\mathrm{g}}$ & $-4.547\pm0.064$ & $\ln{ \mathrm{rel. flux.} }$& fit \\ 
+$\ln{\sigma_\mathrm{r}}$ & $-5.018_{-0.043}^{+0.046}$ & $\ln{ \mathrm{rel. flux.} }$& fit \\ 
+$\ln{\sigma_\mathrm{i}}$ & $-5.126_{-0.033}^{+0.035}$ & $\ln{ \mathrm{rel. flux.} }$& fit \\ 
+$\ln{\sigma_\mathrm{z}}$ & $-5.398_{-0.055}^{+0.049}$ & $\ln{ \mathrm{rel. flux.} }$& fit \\ 
+$\ln{\sigma_\mathrm{jitter; ird}}$ & $-8.4_{-4.1}^{+3.6}$ & $\ln{ \mathrm{km/s} }$& fit \\ 
+$\mathrm{gp: \ln{\sigma} (g)}$ & $-4.17_{-0.69}^{+1.1}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (g)}$ & $6.2\pm6.1$ & & fit \\ 
+$\mathrm{gp: \ln{\sigma} (r)}$ & $-4.57_{-0.61}^{+0.98}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (r)}$ & $4.5_{-6.4}^{+7.1}$ & & fit \\ 
+$\mathrm{gp: \ln{\sigma} (i)}$ & $-4.65_{-0.68}^{+1.1}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (i)}$ & $8.2_{-5.4}^{+4.7}$ & & fit \\ 
+$\mathrm{gp: \ln{\sigma} (z)}$ & $-5.04_{-0.35}^{+0.61}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (z)}$ & $-2.76_{-1.3}^{+0.84}$ & & fit \\ 
+$\mathrm{gp: \ln{\sigma} (ird)}$ & $-2.11_{-0.24}^{+0.27}$ & & fit \\ 
+$\mathrm{gp: \ln{\rho} (ird)}$ & $-2.22_{-0.54}^{+0.63}$ & & fit \\ 

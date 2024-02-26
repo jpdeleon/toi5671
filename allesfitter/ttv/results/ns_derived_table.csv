@@ -1,49 +1,31 @@
 #property,value,lower_error,upper_error,source
-Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$,0.056364403715379104,0.0005436597854383551,0.000584780115450316,derived
-Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$,17.741693943036402,0.1821797808419383,0.17279320993306868,derived
-Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$,0.015460222694667203,0.00018029999646148112,0.00019844281580724647,derived
-Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$),12.26650425964425,0.3031351002942184,0.3023053197087293,derived
-Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$),1.094346092128308,0.027043948738132206,0.02696992054543501,derived
-Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$),7.2699857930224345,0.18920652561903584,0.1915233072079383,derived
-Semi-major axis b; $a_\mathrm{b}$ (AU),0.033808830918110835,0.0008798987529517258,0.0008906728698817173,derived
-Inclination b; $i_\mathrm{b}$ (deg),89.47507652047811,0.1778905663732786,0.2312589176056008,derived
-Impact parameter b; $b_\mathrm{tra;b}$,0.1625799826851955,0.07086110276071493,0.05287642518531621,derived
-Total transit duration b; $T_\mathrm{tot;b}$ (h),1.8017708405433452,0.00979365145116673,0.009603542209119631,derived
-Full-transit duration b; $T_\mathrm{full;b}$ (h),1.0075793017035943,0.011880074668803475,0.009504107953877794,derived
-Epoch occultation b; $T_\mathrm{0;occ;b}$,2459402.9345142543,0.0035857553593814373,0.0038141096010804176,derived
-Impact parameter occultation b; $b_\mathrm{occ;b}$,0.1625799826851955,0.07086110276071493,0.05287642518531621,derived
-Equilibrium temperature b; $T_\mathrm{eq;b}$ (K),519.0232429294483,24.181334947511118,24.409265640781996,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_gp}$ (ppt),89.2239011357423,0.6170640731774029,0.5959902634580345,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_gp}$ (ppt),89.2239011357423,0.6170640731774029,0.5959902634580345,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_gp}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_gp}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_rp}$ (ppt),88.26631164781296,0.6534043588929421,0.5771086767298925,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_rp}$ (ppt),88.26631164781296,0.6534043588929421,0.5771086767298925,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_rp}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_rp}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco1m_gp}$ (ppt),89.18967767238661,0.5759857959256607,0.6450812789955478,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco1m_gp}$ (ppt),89.18967767238661,0.5759857959256607,0.6450812789955478,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; lco1m_gp}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; lco1m_gp}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco1m_V}$ (ppt),93.85850076028667,0.6909539672446101,0.6656718441922038,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco1m_V}$ (ppt),93.85850076028667,0.6909539672446101,0.6656718441922038,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; lco1m_V}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; lco1m_V}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_ip}$ (ppt),86.84208413817684,0.5767982475292115,0.6091425529258743,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_ip}$ (ppt),86.84208413817684,0.5767982475292115,0.6091425529258743,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_ip}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_ip}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; keplercam_ip}$ (ppt),75.26846011240518,0.5601623964677316,0.49251970917529775,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; keplercam_ip}$ (ppt),75.26846011240518,0.5601623964677316,0.49251970917529775,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_zs}$ (ppt),85.90675356434463,0.5801226212602728,0.5817760627493413,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_zs}$ (ppt),85.90675356434463,0.5801226212602728,0.5817760627493413,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; muscat3_zs}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; muscat3_zs}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco0.4m_zs_2}$ (ppt),85.92765327683682,0.6096449017040015,0.5612447387623973,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco0.4m_zs_2}$ (ppt),85.92765327683682,0.6096449017040015,0.5612447387623973,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; lco0.4m_zs_2}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; lco0.4m_zs_2}$ (ppt),0.0,0.0,0.0,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; tess}$ (ppt),85.79182246536665,0.5692810221692355,0.6151738992011815,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; tess}$ (ppt),85.79182246536665,0.5692810221692355,0.6151738992011815,derived
-Occultation depth (undil.) b; $\delta_\mathrm{occ; undil; b; tess}$ (ppt),0.0,0.0,0.0,derived
-Occultation depth (dil.) b; $\delta_\mathrm{occ; dil; b; tess}$ (ppt),0.0,0.0,0.0,derived
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$,0.056540822333920146,0.0005557771371379402,0.000567720457582549,derived
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$,17.68633632694933,0.17582124252675513,0.17557655505502368,derived
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$,0.015535279076391397,0.00018540196909995997,0.00019052217667401943,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$),12.289644680102542,0.30275233325661155,0.3011823399614606,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$),1.0964105457136746,0.027009800491579528,0.02686973483058508,derived
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$),7.250177780817973,0.18919792020972537,0.1902530422706823,derived
+Semi-major axis b; $a_\mathrm{b}$ (AU),0.03371671440584925,0.0008798587337774597,0.0008847655443782534,derived
+Inclination b; $i_\mathrm{b}$ (deg),89.44305692272829,0.16437470855117908,0.19777422606895811,derived
+Impact parameter b; $b_\mathrm{tra;b}$,0.1719802018589264,0.05994622659618919,0.04871206535072878,derived
+Total transit duration b; $T_\mathrm{tot;b}$ (h),1.8060272047103374,0.00983196711446288,0.0094350013095299,derived
+Full-transit duration b; $T_\mathrm{full;b}$ (h),1.0066337470544182,0.011215114112230418,0.008924627860782852,derived
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K),519.7421629597148,24.168540903906205,24.49107269846479,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_gp}$ (ppt),89.46089499453302,0.5261568448177059,0.49730782449687183,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_gp}$ (ppt),89.46089499453302,0.5261568448177059,0.49730782449687183,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_rp}$ (ppt),88.53585630471628,0.581878809005957,0.5939696782024697,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_rp}$ (ppt),88.53585630471628,0.581878809005957,0.5939696782024697,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco1m_gp}$ (ppt),89.46712262441714,0.49290731470442495,0.5380463221747931,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco1m_gp}$ (ppt),89.46712262441714,0.49290731470442495,0.5380463221747931,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco1m_V}$ (ppt),94.04380650014265,0.58492491395711,0.6254165690290421,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco1m_V}$ (ppt),94.04380650014265,0.58492491395711,0.6254165690290421,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_ip}$ (ppt),87.14257882281984,0.5451355192395226,0.5388955539182803,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_ip}$ (ppt),87.14257882281984,0.5451355192395226,0.5388955539182803,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; keplercam_ip}$ (ppt),75.48987930864503,0.5078308467706307,0.5661556788920734,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; keplercam_ip}$ (ppt),75.48987930864503,0.5078308467706307,0.5661556788920734,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; muscat3_zs}$ (ppt),86.14626749470145,0.5330701550347925,0.5687245497455393,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; muscat3_zs}$ (ppt),86.14626749470145,0.5330701550347925,0.5687245497455393,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; lco0.4m_zs_2}$ (ppt),86.15118599510585,0.5117263397899023,0.5278565031140516,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; lco0.4m_zs_2}$ (ppt),86.15118599510585,0.5117263397899023,0.5278565031140516,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; tess}$ (ppt),86.04973374104696,0.4856773712922404,0.5207126400787985,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; tess}$ (ppt),86.04973374104696,0.4856773712922404,0.5207126400787985,derived

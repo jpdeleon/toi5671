@@ -163,3 +163,9 @@ cython_debug/
 #.idea/
 ./.git/objects/pack/pack-b62e588ea3e18a09fe532c6e9a25675dae51cf47.pack
 ./ccf/TOI5671.tar.gz
+./allesfitter/ttv/results/save_ns.pickle.gz
+./allesfitter/ttv/results_orig/save_ns.pickle.gz
+./ccf/TOI5671.tar.gz
+./.git/objects/d6/e95d24c8579e167a1af41fda08657bc38685b2
+./.git/objects/a7/b75595f31a76a61f403af6d92c7197b3de3b23
+./.git/objects/pack/pack-32672d915f45c044708d88ebf90fe0670112c5d3.pack

@@ -1,0 +1,33 @@
+#name,median,lower_error,upper_error,label,unit
+#Fitted parameters,,,
+b_rr,0.2744386087084125,0.0007203065615225546,0.0006899694323133088,$R_b / R_\star$,
+b_rsuma,0.07173444582428508,9.30978275076183e-05,9.621516785150719e-05,$(R_\star + R_b) / a_b$,
+b_cosi,0.009229796675904586,0.0035213827007359597,0.0028888189142398085,$\cos{i_b}$,
+b_epoch,2459963.6095315577,0.00018156133592128754,0.0001858784817159176,$T_{0;b}$,BJD
+b_period,3.3078209852875418,2.5693045255792413e-06,2.5306147066750384e-06,$P_b$,d
+b_K,0.22668778816541435,0.05196699840470842,0.05427339208563153,$K_b$,$\mathrm{km/s}$
+b_f_c,-0.17976551457538814,0.2093053962100922,0.22640231905422292,$\sqrt{e_b} \cos{\omega_b}$,
+b_f_s,-0.03658126456264643,0.048587805617969715,0.057953875843699244,$\sqrt{e_b} \sin{\omega_b}$,
+host_ldc_q1_g,0.7,(fixed),(fixed),$q_{1; \mathrm{g}}$,
+host_ldc_q2_g,0.08,(fixed),(fixed),$q_{2; \mathrm{g}}$,
+host_ldc_q1_r,0.51,(fixed),(fixed),$q_{1; \mathrm{r}}$,
+host_ldc_q2_r,0.15,(fixed),(fixed),$q_{2; \mathrm{r}}$,
+host_ldc_q1_i,0.42,(fixed),(fixed),$q_{1; \mathrm{i}}$,
+host_ldc_q2_i,0.15,(fixed),(fixed),$q_{2; \mathrm{i}}$,
+host_ldc_q1_z,0.36,(fixed),(fixed),$q_{1; \mathrm{z}}$,
+host_ldc_q2_z,0.15,(fixed),(fixed),$q_{2; \mathrm{z}}$,
+ln_err_flux_g,-4.547404642986063,0.060996564753832416,0.06352721585637333,$\ln{\sigma_\mathrm{g}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_r,-5.017569597614191,0.0425565593438062,0.04609579984580403,$\ln{\sigma_\mathrm{r}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_i,-5.1262955148020755,0.033066759495467224,0.03497459224209365,$\ln{\sigma_\mathrm{i}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_z,-5.3983520356085055,0.05498615309428345,0.0490677178340686,$\ln{\sigma_\mathrm{z}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_jitter_rv_ird,-8.387087967243826,4.111712481636786,3.5590016648573535,$\ln{\sigma_\mathrm{jitter; ird}}$,$\ln{ \mathrm{km/s} }$
+baseline_gp_matern32_lnsigma_flux_g,-4.169848781690508,0.6857424963415131,1.1336606393662727,$\mathrm{gp: \ln{\sigma} (g)}$,
+baseline_gp_matern32_lnrho_flux_g,6.169156337076791,6.118507680759304,5.947645597815976,$\mathrm{gp: \ln{\rho} (g)}$,
+baseline_gp_matern32_lnsigma_flux_r,-4.573617284246049,0.6097920876899874,0.9769392211216008,$\mathrm{gp: \ln{\sigma} (r)}$,
+baseline_gp_matern32_lnrho_flux_r,4.4666611928354385,6.40528903061138,7.120162923545259,$\mathrm{gp: \ln{\rho} (r)}$,
+baseline_gp_matern32_lnsigma_flux_i,-4.6537216359941675,0.6799229554467727,1.0893857462008727,$\mathrm{gp: \ln{\sigma} (i)}$,
+baseline_gp_matern32_lnrho_flux_i,8.221007406775918,5.428169069949648,4.650702548236989,$\mathrm{gp: \ln{\rho} (i)}$,
+baseline_gp_matern32_lnsigma_flux_z,-5.037611677719752,0.34593216691993334,0.6102127056725557,$\mathrm{gp: \ln{\sigma} (z)}$,
+baseline_gp_matern32_lnrho_flux_z,-2.7646972729125707,1.2966652349543413,0.8429489835788058,$\mathrm{gp: \ln{\rho} (z)}$,
+baseline_gp_matern32_lnsigma_rv_ird,-2.107857476102028,0.241711414504989,0.2654176365826739,$\mathrm{gp: \ln{\sigma} (ird)}$,
+baseline_gp_matern32_lnrho_rv_ird,-2.2196698434647795,0.5419991302036693,0.6320351649057399,$\mathrm{gp: \ln{\rho} (ird)}$,
