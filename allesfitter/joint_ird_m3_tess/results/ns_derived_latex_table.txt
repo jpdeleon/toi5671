@@ -1,0 +1,30 @@
+Parameter & Value & Source \\ 
+\hline 
+\multicolumn{3}{c}{\textit{Derived parameters}} \\ 
+\hline 
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$ & $0.05706\pm0.00068$ & derived \\ 
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$ & $17.52\pm0.21$ & derived \\ 
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$ & $0.01567_{-0.00023}^{+0.00022}$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$) & $12.28\pm0.31$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$) & $1.095\pm0.027$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$) & $7.18\pm0.20$ & derived \\ 
+Semi-major axis b; $a_\mathrm{b}$ (AU) & $0.03341\pm0.00091$ & derived \\ 
+Inclination b; $i_\mathrm{b}$ (deg) & $89.32_{-0.16}^{+0.22}$ & derived \\ 
+Mass ratio b; $q_\mathrm{b}$ & $0.00190\pm0.00046$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$) & $252_{-59}^{+63}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$) & $0.79_{-0.19}^{+0.20}$ & derived \\ 
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$) & $0.00076_{-0.00018}^{+0.00019}$ & derived \\ 
+Impact parameter b; $b_\mathrm{tra;b}$ & $0.209_{-0.064}^{+0.045}$ & derived \\ 
+Total transit duration b; $T_\mathrm{tot;b}$ (h) & $1.815\pm0.012$ & derived \\ 
+Full-transit duration b; $T_\mathrm{full;b}$ (h) & $1.002\pm0.013$ & derived \\ 
+Companion density b; $\rho_\mathrm{b}$ (cgs) & $0.75_{-0.18}^{+0.21}$ & derived \\ 
+Companion surface gravity b; $g_\mathrm{b}$ (cgs) & $1860\pm450$ & derived \\ 
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K) & $522\pm25$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; g}$ (ppt) & $89.24_{-0.89}^{+0.66}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; g}$ (ppt) & $89.24_{-0.89}^{+0.66}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; r}$ (ppt) & $88.28_{-0.83}^{+0.70}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; r}$ (ppt) & $88.28_{-0.83}^{+0.70}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; i}$ (ppt) & $86.87_{-0.78}^{+0.66}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; i}$ (ppt) & $86.87_{-0.78}^{+0.66}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; z}$ (ppt) & $85.92\pm0.74$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; z}$ (ppt) & $85.92\pm0.74$ & derived \\ 
