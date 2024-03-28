@@ -1,27 +1,27 @@
 #property,value,lower_error,upper_error,source
-Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$,0.05706162791435964,0.0006791725999357873,0.0006649040454922497,derived
-Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$,17.524911863728104,0.201854925274084,0.2111018385214649,derived
-Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$,0.015668095215206207,0.00023280903187141398,0.00022089899611067026,derived
-Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$),12.275089228117341,0.3039936716895486,0.30643235966786264,derived
-Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$),1.0951119930321604,0.027120545479258018,0.027338111022178646,derived
-Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$),7.183182101460391,0.1905368925801314,0.19634515907911876,derived
-Semi-major axis b; $a_\mathrm{b}$ (AU),0.0334051531923709,0.0008860855809493667,0.0009130967341458504,derived
-Inclination b; $i_\mathrm{b}$ (deg),89.31678338489326,0.15675600568961556,0.21683247371417735,derived
-Mass ratio b; $q_\mathrm{b}$,0.001896055868367069,0.0004396389390121198,0.0004552528915255211,derived
-Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$),251.74670406347315,59.1069560808225,62.8962167450934,derived
-Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$),0.7920837119651316,0.18597128152928544,0.19789362888920337,derived
-Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$),0.0007561185442629343,0.00017752711303174187,0.00018890811707689896,derived
-Impact parameter b; $b_\mathrm{tra;b}$,0.20889649449296468,0.06446041978430705,0.045393785910069234,derived
-Total transit duration b; $T_\mathrm{tot;b}$ (h),1.814629003158394,0.01140028133742299,0.011607490700609846,derived
-Full-transit duration b; $T_\mathrm{full;b}$ (h),1.0020830417388809,0.013089983456415766,0.013414392389377694,derived
-Companion density b; $\rho_\mathrm{b}$ (cgs),0.745240570162722,0.1821338915391837,0.20644585726127473,derived
-Companion surface gravity b; $g_\mathrm{b}$ (cgs),1862.6563569549787,435.669827558037,445.2888336603048,derived
-Equilibrium temperature b; $T_\mathrm{eq;b}$ (K),522.3890525127481,24.508516720537727,24.57835640546398,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; g}$ (ppt),89.24236407685576,0.8877961890058685,0.6638973935387185,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; g}$ (ppt),89.24236407685576,0.8877961890058685,0.6638973935387185,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; r}$ (ppt),88.27941847819736,0.8347016440809938,0.700270853417237,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; r}$ (ppt),88.27941847819736,0.8347016440809938,0.700270853417237,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; i}$ (ppt),86.86528543901451,0.7838221643802257,0.6641194585115215,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; i}$ (ppt),86.86528543901451,0.7838221643802257,0.6641194585115215,derived
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; z}$ (ppt),85.91599940542628,0.7371027833069661,0.7163165867218737,derived
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; z}$ (ppt),85.91599940542628,0.7371027833069661,0.7163165867218737,derived
+Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$,0.057063595038120835,0.0006816118612771385,0.000663607097660078,derived
+Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$,17.524307736516754,0.20145190761835607,0.21185448508285987,derived
+Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$,0.01566872452389403,0.00023403827741795037,0.0002208115945138353,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$),12.27528346402623,0.3045273827861745,0.30773646945113065,derived
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$),1.0951293216290732,0.027168160075931702,0.02745445610426711,derived
+Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$),7.184424319291427,0.193101619155704,0.19536060227043528,derived
+Semi-major axis b; $a_\mathrm{b}$ (AU),0.03341093008572511,0.0008980127579223812,0.00090851808494051,derived
+Inclination b; $i_\mathrm{b}$ (deg),89.3160583239077,0.15668835024260375,0.21734997934113665,derived
+Mass ratio b; $q_\mathrm{b}$,0.0018949806540154283,0.0004382937125545895,0.00046112246833203896,derived
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$),251.52578094611943,58.61643643266086,63.17402756524615,derived
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$),0.7913886101027123,0.18442793411922465,0.19876771948144878,derived
+Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$),0.0007554550040330475,0.0001760538424930865,0.00018974251891622326,derived
+Impact parameter b; $b_\mathrm{tra;b}$,0.20907988839199612,0.06451825571614064,0.04546187366906504,derived
+Total transit duration b; $T_\mathrm{tot;b}$ (h),1.8146340443512492,0.011405568480159278,0.011627128149122035,derived
+Full-transit duration b; $T_\mathrm{full;b}$ (h),1.0020611768482195,0.013130818500570185,0.013420523277652308,derived
+Companion density b; $\rho_\mathrm{b}$ (cgs),0.7453943292458891,0.18284242748990698,0.20989417600090143,derived
+Companion surface gravity b; $g_\mathrm{b}$ (cgs),1862.9916379613055,435.1397885169547,449.38353115460586,derived
+Equilibrium temperature b; $T_\mathrm{eq;b}$ (K),522.2713087981116,24.526444698629064,24.64258049764112,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; g}$ (ppt),89.23890187474404,0.8234131920620342,0.6811442983818381,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; g}$ (ppt),89.23890187474404,0.8234131920620342,0.6811442983818381,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; r}$ (ppt),88.25960622530616,0.7557397150199705,0.7085117332935624,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; r}$ (ppt),88.25960622530616,0.7557397150199705,0.7085117332935624,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; i}$ (ppt),86.847604108783,0.7610094412889765,0.6598560469820427,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; i}$ (ppt),86.847604108783,0.7610094412889765,0.6598560469820427,derived
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; z}$ (ppt),85.95066197694095,0.8850277456948135,0.5922543232162525,derived
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; z}$ (ppt),85.95066197694095,0.8850277456948135,0.5922543232162525,derived

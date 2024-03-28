@@ -5,28 +5,28 @@ Parameter & Value & Source \\
 Host radius over semi-major axis b; $R_\star/a_\mathrm{b}$ & $0.056286_{-0.000078}^{+0.000083}$ & derived \\ 
 Semi-major axis b over host radius; $a_\mathrm{b}/R_\star$ & $17.766_{-0.026}^{+0.025}$ & derived \\ 
 Companion radius b over semi-major axis b; $R_\mathrm{b}/a_\mathrm{b}$ & $0.015447\pm0.000039$ & derived \\ 
-Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$) & $12.28\pm0.30$ & derived \\ 
+Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{\oplus}}$) & $12.27\pm0.30$ & derived \\ 
 Companion radius b; $R_\mathrm{b}$ ($\mathrm{R_{jup}}$) & $1.095\pm0.027$ & derived \\ 
 Semi-major axis b; $a_\mathrm{b}$ ($\mathrm{R_{\odot}}$) & $7.29\pm0.18$ & derived \\ 
 Semi-major axis b; $a_\mathrm{b}$ (AU) & $0.03388\pm0.00083$ & derived \\ 
 Inclination b; $i_\mathrm{b}$ (deg) & $89.47_{-0.17}^{+0.20}$ & derived \\ 
 Eccentricity b; $e_\mathrm{b}$ & $0.043_{-0.035}^{+0.11}$ & derived \\ 
-Argument of periastron b; $w_\mathrm{b}$ (deg) & $188_{-23}^{+66}$ & derived \\ 
+Argument of periastron b; $w_\mathrm{b}$ (deg) & $188_{-24}^{+65}$ & derived \\ 
 Mass ratio b; $q_\mathrm{b}$ & $0.00203\pm0.00049$ & derived \\ 
 Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\oplus}}$) & $269_{-63}^{+67}$ & derived \\ 
 Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{jup}}$) & $0.85_{-0.20}^{+0.21}$ & derived \\ 
 Companion mass b; $M_\mathrm{b}$ ($\mathrm{M_{\odot}}$) & $0.00081_{-0.00019}^{+0.00020}$ & derived \\ 
-Impact parameter b; $b_\mathrm{tra;b}$ & $0.164_{-0.063}^{+0.053}$ & derived \\ 
-Total transit duration b; $T_\mathrm{tot;b}$ (h) & $1.8064_{-0.0090}^{+0.011}$ & derived \\ 
+Impact parameter b; $b_\mathrm{tra;b}$ & $0.163_{-0.063}^{+0.053}$ & derived \\ 
+Total transit duration b; $T_\mathrm{tot;b}$ (h) & $1.8064_{-0.0090}^{+0.010}$ & derived \\ 
 Full-transit duration b; $T_\mathrm{full;b}$ (h) & $1.0094_{-0.011}^{+0.0094}$ & derived \\ 
-Companion density b; $\rho_\mathrm{b}$ (cgs) & $0.80_{-0.19}^{+0.22}$ & derived \\ 
+Companion density b; $\rho_\mathrm{b}$ (cgs) & $0.80_{-0.20}^{+0.22}$ & derived \\ 
 Companion surface gravity b; $g_\mathrm{b}$ (cgs) & $2080\pm500$ & derived \\ 
 Equilibrium temperature b; $T_\mathrm{eq;b}$ (K) & $519\pm24$ & derived \\ 
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; g}$ (ppt) & $89.29\pm0.43$ & derived \\ 
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; g}$ (ppt) & $89.29\pm0.43$ & derived \\ 
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; r}$ (ppt) & $88.35\pm0.43$ & derived \\ 
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; r}$ (ppt) & $88.35\pm0.43$ & derived \\ 
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; i}$ (ppt) & $86.96_{-0.45}^{+0.39}$ & derived \\ 
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; i}$ (ppt) & $86.96_{-0.45}^{+0.39}$ & derived \\ 
-Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; z}$ (ppt) & $85.93_{-0.38}^{+0.46}$ & derived \\ 
-Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; z}$ (ppt) & $85.93_{-0.38}^{+0.46}$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; g}$ (ppt) & $89.28\pm0.44$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; g}$ (ppt) & $89.28\pm0.44$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; r}$ (ppt) & $88.32\pm0.45$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; r}$ (ppt) & $88.32\pm0.45$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; i}$ (ppt) & $86.96\pm0.44$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; i}$ (ppt) & $86.96\pm0.44$ & derived \\ 
+Transit depth (undil.) b; $\delta_\mathrm{tr; undil; b; z}$ (ppt) & $85.95_{-0.41}^{+0.39}$ & derived \\ 
+Transit depth (dil.) b; $\delta_\mathrm{tr; dil; b; z}$ (ppt) & $85.95_{-0.41}^{+0.39}$ & derived \\ 

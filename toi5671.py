@@ -1,25 +1,39 @@
 #!/usr/bin/env python
 import os
 import json
+import requests
+from pathlib import Path
 from multiprocessing import Pool
 from urllib.request import urlopen
 from dataclasses import dataclass, field
 from typing import Dict, Tuple, List
-from matplotlib.ticker import AutoMinorLocator
-from matplotlib import cm
 import numpy as np
 import matplotlib.pyplot as pl
+from matplotlib.patches import Circle
+from matplotlib.ticker import AutoMinorLocator
+from matplotlib import cm
 from scipy.optimize import minimize
 import pandas as pd
 import emcee
 import corner
 import seaborn as sb
+import pandas as pd
 import astropy.units as u
+from astropy.table import Table
+from astropy.coordinates import SkyCoord
+from astropy.io import fits
+from astropy.visualization import ZScaleInterval
+from astropy.time import Time
+from astropy.wcs import WCS
 from pytransit import QuadraticModel
+from astroquery.mast import Catalogs
 from ldtk import LDPSetCreator, BoxcarFilter
 import seaborn as sb
 from numba import njit
 from scipy import stats
+from scipy.interpolate import NearestNDInterpolator
+
+
 
 sb.set(
     context="paper",
@@ -631,7 +645,7 @@ class TransitFit:
         tdur0 = self.planet_params['tdur']
         a_Rs0 = self.planet_params['a_Rs']
         # tc shouldn't be more or less than half a period
-        if abs(t0-epoch0[0]) > 0.1:
+        if abs(t0-epoch0[0]) > 1:
             if self.DEBUG:
                     errmsg = f"Error (tc more or less than half of period): "
                     errmsg += f"abs({t0:.4f}-{epoch0[0]:.4f}) > {period0[0]/2:.4f}"
@@ -1344,6 +1358,7 @@ class Star:
     def __post_init__(self):
         if self.star_params is None:
             self.get_star_params()
+            self.get_magnitudes()
 
         sources = set(
             [
@@ -1367,6 +1382,11 @@ class Star:
         except Exception:
             raise ValueError(f"No TIC data found for {self.name}")
 
+    def get_magnitudes(self):
+        self.magnitudes = pd.json_normalize(self.data_json['magnitudes'])
+        self.magnitudes.value = self.magnitudes.value.astype(float)
+        self.magnitudes.value_e = self.magnitudes.value_e.astype(float)
+
     def get_star_params(self):
         if not hasattr(self, "data_json"):
             self.data_json = self.get_tfop_data()
@@ -1380,15 +1400,15 @@ class Star:
             if p.get("prov") == self.source:
                 idx = i + 1
                 break
-        star_params = self.data_json["stellar_parameters"][idx]
+        self.tic_params = self.data_json["stellar_parameters"][idx]
 
         try:
             self.rstar = tuple(
                 map(
                     float,
                     (
-                        star_params.get("srad", np.nan),
-                        star_params.get("srad_e", np.nan),
+                        self.tic_params.get("srad", np.nan),
+                        self.tic_params.get("srad_e", np.nan),
                     ),
                 )
             )
@@ -1396,8 +1416,8 @@ class Star:
                 map(
                     float,
                     (
-                        star_params.get("mass", np.nan),
-                        star_params.get("mass_e", np.nan),
+                        self.tic_params.get("mass", np.nan),
+                        self.tic_params.get("mass_e", np.nan),
                     ),
                 )
             )
@@ -1417,8 +1437,8 @@ class Star:
                 map(
                     float,
                     (
-                        star_params.get("teff", np.nan),
-                        star_params.get("teff_e", 500),
+                        self.tic_params.get("teff", np.nan),
+                        self.tic_params.get("teff_e", 500),
                     ),
                 )
             )
@@ -1426,14 +1446,14 @@ class Star:
                 map(
                     float,
                     (
-                        star_params.get("logg", np.nan),
-                        star_params.get("logg_e", 0.1),
+                        self.tic_params.get("logg", np.nan),
+                        self.tic_params.get("logg_e", 0.1),
                     ),
                 )
             )
-            val = star_params.get("feh", 0)
+            val = self.tic_params.get("feh", 0)
             val = 0 if (val is None) or (val == "") else val
-            val_err = star_params.get("feh_e", 0.1)
+            val_err = self.tic_params.get("feh_e", 0.1)
             val_err = 0.1 if (val is None) or (val_err == "") else val_err
             self.feh = tuple(map(float, (val, val_err)))
             print(f"teff=({self.teff[0]:.0f},{self.teff[1]:.0f}) K")
@@ -1463,6 +1483,122 @@ class Star:
         ]
         assert len(self.gaia_sources) > 1, "gaia_sources contains single entry"
         return self.gaia_sources
+
+    def get_spectral_type(
+        self,
+        columns="Teff G-V J-H H-Ks W1-W2 W1-W3".split(),
+        nsamples=int(1e4),
+        return_samples=False,
+        plot=False,
+        ):
+        """
+        Interpolate spectral type from Mamajek table from
+        http://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt
+        based on observables Teff and color indices.
+        c.f. self.query_vizier_param("SpT")
+    
+        Parameters
+        ----------
+        nsamples : int
+            number of Monte Carlo samples (default=1e4)
+    
+        Returns
+        -------
+        interpolated spectral type
+    
+        Notes:
+        It may be good to check which color index yields most accurate result
+    
+        Check sptype from self.query_simbad()
+        """
+        df = get_Mamajek_table()
+        gaia_sources = self.get_gaia_sources()
+        self.gaia_params = gaia_sources.iloc[0].squeeze()
+        # if self.tic_params is None:
+        #     self.tic_params = self.query_tic_catalog(
+        #         return_nearest_xmatch=True
+        #     )
+    
+        # effective temperature
+        col = "teff"
+        teff = self.gaia_params[f"{col}_val"]
+        siglo = (self.gaia_params[f"{col}_val"] - self.gaia_params[f"{col}_percentile_lower"])
+        sighi = (self.gaia_params[f"{col}_percentile_upper"] - self.gaia_params[f"{col}_val"])
+        uteff = np.sqrt(sighi**2 + siglo**2)
+        s_teff = (teff + np.random.randn(nsamples) * uteff)  # Monte Carlo samples
+        print(f"Gaia Teff={teff},{uteff} K")
+        bands=['Gaia','V','J','H','K',
+               'WISE 3.4 micron','WISE 4.6 micron','WISE 12 micron']
+        mags = {}
+        for band in bands:
+            val=self.magnitudes.query("band==@band").value.squeeze()
+            err=self.magnitudes.query("band==@band").value_e.squeeze()
+            mags[band]=(val,err)
+            print(f"{band}=({val},{err})")
+        colors = []
+        if 'G-V' in columns:
+            gv_color =  mags['Gaia'][0] - mags['V'][0]
+            print(f"G-V={gv_color}")
+            ugv_color = mags['Gaia'][1] + mags['V'][1]
+            s_gv_color = (
+                 gv_color + np.random.randn(nsamples) * ugv_color
+            )  # Monte Carlo samples
+            colors.append(s_gv_color)
+        if 'J-H' in columns:
+            # J-H color index
+            jh_color =  mags['J'][0] - mags['H'][0]
+            print(f"J-H={jh_color}")
+            ujh_color = mags['J'][1] + mags['H'][1]
+            s_jh_color = (
+                jh_color + np.random.randn(nsamples) * ujh_color
+            )  # Monte Carlo samples
+            colors.append(s_jh_color)
+        if 'H-Ks' in columns:        
+            # H-Ks color index
+            hk_color =  mags['H'][0] - mags['K'][0]
+            print(f"H-Ks={gv_color}")
+            uhk_color = mags['H'][1] + mags['K'][1]
+            s_hk_color = (
+                hk_color + np.random.randn(nsamples) * uhk_color
+            )
+            colors.append(s_hk_color)
+        if 'W1-W2' in columns:
+            # W1-W2 color index
+            w1w2_color =  mags['WISE 3.4 micron'][0] - mags['WISE 4.6 micron'][0]
+            print(f"W1-W2={w1w2_color}")
+            uw1w2_color = mags['WISE 3.4 micron'][1] + mags['WISE 4.6 micron'][1]
+            s_w1w2_color = (
+                w1w2_color + np.random.randn(nsamples) * uw1w2_color
+            ) 
+            colors.append(s_w1w2_color)
+        if 'W1-W3' in columns:
+            # W1-W3 color index
+            w1w3_color =  mags['WISE 3.4 micron'][0] - mags['WISE 12 micron'][0]
+            print(f"W1-W3={w1w3_color}")
+            uw1w3_color = mags['WISE 3.4 micron'][1] + mags['WISE 12 micron'][1]
+            s_w1w3_color = (
+                w1w3_color + np.random.randn(nsamples) * uw1w3_color
+            ) 
+            colors.append(s_w1w3_color)
+        
+        # Interpolate
+        cols = columns.copy()
+        cols.append("#SpT")
+        df = df[cols].dropna()
+        interp = NearestNDInterpolator(
+            df[columns].values, df["#SpT"].values, rescale=False
+        )
+        samples = interp(s_teff, *colors)
+        # encode category
+        spt_cats = pd.Series(samples, dtype="category")  # .cat.codes
+        spt = spt_cats.mode().values[0]
+        if plot:
+            nbins = np.unique(samples)
+            pl.hist(samples, bins=nbins)
+        if return_samples:
+            return spt, samples
+        else:
+            return spt
 
     def params_to_dict(self):
         return {
@@ -1942,3 +2078,329 @@ def plot_tls_results(time, flux, results, toffset=2457000, figsize=(10,5)):
     ax.set_ylabel('Relative flux');
     ax.axhline(results.depth, 0, 1, ls='--')
     return fig
+
+def get_Mamajek_table(data_loc='../data'):
+    """
+    after downloading, I manually removed all ":" in table,
+    and replaced all 4 & 5 ellipsis into 3 ellipsis
+    """
+    url = "http://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt"
+    fp = Path(data_loc, "Mamajek_table.txt")
+    if not fp.exists():        
+        response = requests.get(url)
+        with open(fp, "wb") as file:
+            file.write(response.text)
+            print("Saved: ", fp)
+    # Read the table
+    table = Table.read(fp, 
+                       format='ascii',
+                       comment='',
+                       header_start=22, 
+                       data_start=23,
+                       data_end=141,
+                       delimiter=' ',
+                       fill_values=('...', np.nan),
+                       fast_reader=False,
+                       guess=False)    
+    # Display the table
+    df = table.to_pandas()
+    #replace duplicated column=SpT_1 with letter only
+    # df['#SpT_1'] = df['#SpT'].apply(lambda x: x[0])
+    df = df.drop('#SpT_1', axis=1)
+    for col in df.columns:
+        if col == "#SpT":
+            df[col] = df[col].astype("category")
+        else:
+            df[col] = df[col].astype(float)
+    print(f"Loaded: {fp}")
+    return df
+
+
+# http://gsss.stsci.edu/SkySurveys/Surveys.htm
+dss_description = {
+    "dss1": "POSS1 Red in the north; POSS2/UKSTU Blue in the south",
+    "poss2ukstu_red": "POSS2/UKSTU Red",
+    "poss2ukstu_ir": "POSS2/UKSTU Infrared",
+    "poss2ukstu_blue": "POSS2/UKSTU Blue",
+    "poss1_blue": "POSS1 Blue",
+    "poss1_red": "POSS1 Red",
+    "all": "best among all plates",
+    "quickv": "Quick-V Survey",
+    "phase2_gsc2": "HST Phase 2 Target Positioning (GSC 2)",
+    "phase2_gsc1": "HST Phase 2 Target Positioning (GSC 1)",
+}
+
+
+def get_exofop_json(target_name):
+    url = f"https://exofop.ipac.caltech.edu/tess/target.php?id={target_name}&json"
+    print(f"Querying data from exofop:\n{url}")
+    response = urlopen(url)
+    data_json = json.loads(response.read())
+    return data_json
+
+def get_dss_data(
+    ra,
+    dec,
+    survey="poss2ukstu_red",
+    plot=False,
+    height=1,
+    width=1,
+    epoch="J2000",
+):
+    """
+    Digitized Sky Survey (DSS)
+    http://archive.stsci.edu/cgi-bin/dss_form
+    Parameters
+    ----------
+    survey : str
+        (default=poss2ukstu_red) see `dss_description`
+    height, width : float
+        image cutout height and width [arcmin]
+    epoch : str
+        default=J2000
+    Returns
+    -------
+    hdu
+    """
+    survey_list = list(dss_description.keys())
+    if survey not in survey_list:
+        raise ValueError(f"{survey} not in:\n{survey_list}")
+    base_url = "http://archive.stsci.edu/cgi-bin/dss_search?v="
+    url = f"{base_url}{survey}&r={ra}&d={dec}&e={epoch}&h={height}&w={width}&f=fits&c=none&s=on&fov=NONE&v3"
+    try:
+        hdulist = fits.open(url)
+        # hdulist.info()
+
+        hdu = hdulist[0]
+        # data = hdu.data
+        # header = hdu.header
+        if plot:
+            _ = plot_dss_image(hdu)
+        return hdu
+    except Exception as e:
+        if isinstance(e, OSError):
+            print(f"Error: {e}\nsurvey={survey} image is likely unavailable.")
+        else:
+            raise Exception(f"Error: {e}")
+
+def plot_dss_image(
+    hdu, cmap="gray", contrast=0.5, coord_format="dd:mm:ss", ax=None
+):
+    """
+    Plot output of get_dss_data:
+    hdu = get_dss_data(ra, dec)
+    """
+    data, header = hdu.data, hdu.header
+    interval = ZScaleInterval(contrast=contrast)
+    zmin, zmax = interval.get_limits(data)
+
+    if ax is None:
+        fig = pl.figure(constrained_layout=True)
+        ax = fig.add_subplot(projection=WCS(header))
+    ax.imshow(data, vmin=zmin, vmax=zmax, cmap=cmap)
+    ax.set_xlabel("RA")
+    ax.set_ylabel("DEC", y=0.9)
+    title = f"{header['SURVEY']} ({header['FILTER']})\n"
+    title += f"{header['DATE-OBS'][:10]}"
+    ax.set_title(title)
+    # set RA from hourangle to degree
+    if hasattr(ax, "coords"):
+        ax.coords[1].set_major_formatter(coord_format)
+        ax.coords[0].set_major_formatter(coord_format)
+    return ax
+
+
+def plot_archival_images(
+    ra,
+    dec,
+    survey1="dss1",
+    survey2="ps1",  # "poss2ukstu_red",
+    filter="i",
+    fp1=None,
+    fp2=None,
+    height=1,
+    width=1,
+    cmap="gray",
+    reticle=True,
+    grid=True,
+    color="red",
+    contrast=0.5,
+    fontsize=14,
+    coord_format="dd:mm:ss",
+    return_metadata=False,
+):
+    """
+    Plot two archival images
+    See e.g.
+    https://s3.amazonaws.com/aasie/images/1538-3881/159/3/100/ajab5f15f2_hr.jpg
+    Uses reproject to have identical fov:
+    https://reproject.readthedocs.io/en/stable/
+    Parameters
+    ----------
+    ra, dec : float
+        target coordinates in degrees
+    survey1, survey2 : str
+        survey from which the images will come from
+    fp1, fp2 : path
+        filepaths if the images were downloaded locally
+    height, width
+        fov of view in arcmin (default=1')
+    filter : str
+        (g,r,i,z,y) filter if survey = PS1
+    cmap : str
+        colormap (default='gray')
+    reticle : bool
+        plot circle to mark the original position of target in survey1
+    color : str
+        default='red'
+    contrast : float
+        ZScale contrast
+    Notes:
+    ------
+    Account for space motion:
+    https://docs.astropy.org/en/stable/coordinates/apply_space_motion.html
+    The position offset can be computed as:
+    ```
+    import numpy as np
+    pm = np.hypot(pmra, pmdec) #mas/yr
+    offset = pm*baseline_year/1e3
+    ```
+    """
+    pl.rcParams["font.size"] = fontsize
+    pl.rcParams["xtick.labelsize"] = fontsize
+
+    if (survey1 == "ps1") or (survey2 == "ps1"):
+        try:
+            from panstarrs import Panstarrs
+
+            fov = np.hypot(width, height) * u.arcmin
+            ps = Panstarrs(
+                ra=ra,
+                dec=dec,
+                fov=fov.to(u.arcsec),
+                format="fits",
+                color=False,
+            )
+            img, hdr = ps.get_fits(filter=filter, verbose=False)
+        except Exception:
+            raise ModuleNotFoundError(
+                "pip install git+https://github.com/jpdeleon/panstarrs3.git"
+            )
+
+    # poss1
+    if fp1 is not None and fp2 is not None:
+        hdu1 = fits.open(fp1)[0]
+        hdu2 = fits.open(fp2)[0]
+    else:
+        if survey1 == "ps1":
+            hdu1 = fits.open(ps.get_url()[0])[0]
+            hdu1.header["DATE-OBS"] = Time(
+                hdu1.header["MJD-OBS"], format="mjd"
+            ).strftime("%Y-%m-%d")
+            hdu1.header["FILTER"] = hdu1.header["FPA.FILTER"].split(".")[0]
+            hdu1.header["SURVEY"] = "Panstarrs1"
+        else:
+            hdu1 = get_dss_data(
+                ra, dec, height=height, width=width, survey=survey1
+            )
+        if survey2 == "ps1":
+            hdu2 = fits.open(ps.get_url()[0])[0]
+            hdu2.header["DATE-OBS"] = Time(
+                hdu2.header["MJD-OBS"], format="mjd"
+            ).strftime("%Y-%m-%d")
+            hdu2.header["FILTER"] = hdu2.header["FPA.FILTER"].split(".")[0]
+            hdu2.header["SURVEY"] = "Panstarrs1"
+        else:
+            hdu2 = get_dss_data(
+                ra, dec, height=height, width=width, survey=survey2
+            )
+    try:
+        from reproject import reproject_interp
+    except Exception:
+        cmd = "pip install reproject"
+        raise ModuleNotFoundError(cmd)
+
+    projected_img, footprint = reproject_interp(hdu2, hdu1.header)
+
+    fig = pl.figure(figsize=(10, 5), constrained_layout=False)
+    interval = ZScaleInterval(contrast=contrast)
+
+    # data1 = hdu1.data
+    header1 = hdu1.header
+    ax1 = fig.add_subplot(121, projection=WCS(header1))
+    _ = plot_dss_image(
+        hdu1, cmap=cmap, contrast=contrast, coord_format=coord_format, ax=ax1
+    )
+    if reticle:
+        c = Circle(
+            (ra, dec),
+            0.001,
+            edgecolor=color,
+            facecolor="none",
+            lw=2,
+            transform=ax1.get_transform("fk5"),
+        )
+        ax1.add_patch(c)
+    filt1 = (
+        hdu1.header["FILTER"]
+        if hdu1.header["FILTER"] is not None
+        else survey1.split("_")[1]
+    )
+    # zmin, zmax = interval.get_limits(data1)
+    # ax1.imshow(projected_img, origin="lower", vmin=zmin, vmax=zmax, cmap="gray")
+    title = f"{header1['SURVEY']} ({filt1})\n"
+    title += f"{header1['DATE-OBS'][:10]}"
+    ax1.set_title(title)
+    # set RA from hourangle to degree
+    if hasattr(ax1, "coords"):
+        ax1.coords[0].set_major_formatter(coord_format)
+        ax1.coords[1].set_major_formatter(coord_format)
+
+    # recent
+    data2, header2 = hdu2.data, hdu2.header
+    ax2 = fig.add_subplot(122, projection=WCS(header1))
+    # _ = plot_dss_image(hdu2, ax=ax2)
+    zmin, zmax = interval.get_limits(data2)
+    ax2.imshow(projected_img, origin="lower", vmin=zmin, vmax=zmax, cmap=cmap)
+    if reticle:
+        c = Circle(
+            (ra, dec),
+            0.001,
+            edgecolor=color,
+            facecolor="none",
+            lw=2,
+            transform=ax2.get_transform("fk5"),
+        )
+        # ax2.add_patch(c)
+        # ax2.scatter(ra, dec, 'r+')
+    filt2 = (
+        hdu2.header["FILTER"]
+        if hdu2.header["FILTER"] is not None
+        else survey2.split("_")[1]
+    )
+    ax2.coords["dec"].set_axislabel_position("r")
+    ax2.coords["dec"].set_ticklabel_position("r")
+    ax2.coords["dec"].set_axislabel("DEC")
+    ax2.set_xlabel("RA")
+    title = f"{header2['SURVEY']} ({filt2})\n"
+    title += f"{header2['DATE-OBS'][:10]}"
+    ax2.set_title(title)
+    # set RA from hourangle to degree
+    if hasattr(ax2, "coords"):
+        ax2.coords[0].set_major_formatter(coord_format)
+        ax2.coords[1].set_major_formatter(coord_format)
+
+    if grid:
+        [ax.grid(True) for ax in fig.axes]
+    fig.tight_layout(rect=[0, 0.03, 0.5, 0.9])
+    fig.suptitle(".", y=0.995)
+    fig.tight_layout()
+    if return_metadata:
+        metadata = {}
+        baseline = int(header2["DATE-OBS"][:4]) - int(header1["DATE-OBS"][:4])
+        metadata['baseline'] = baseline
+        metadata['survey1_obsdate'] = hdu1.header['DATE-OBS'].split('T')[0]
+        metadata['survey2_obsdate'] = hdu2.header['DATE-OBS'].split('T')[0]
+        return fig, metadata
+    else:
+        return fig
