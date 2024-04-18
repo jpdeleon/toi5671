@@ -18,7 +18,7 @@ multiprocess,True
 multiprocess_cores,40
 fast_fit,True
 fast_fit_width,0.333
-secondary_eclipse,False
+secondary_eclipse,True
 phase_curve,False
 shift_epoch,True
 inst_for_b_epoch,all
