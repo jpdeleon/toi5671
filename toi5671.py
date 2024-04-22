@@ -1314,7 +1314,7 @@ class TransitFit:
     def plot_radii(
         self, rstar, rstar_err, fill=False, unit=u.Rjup, figsize=(5, 5), alpha=0.5
     ):
-        fig, ax = plt.subplots(figsize=figsize)
+        fig, ax = pl.subplots(figsize=figsize)
         df = self.get_mcmc_samples()
         rstar_samples = np.random.normal(rstar, rstar_err, size=len(df))
         if self.model == "chromatic":
@@ -1514,10 +1514,6 @@ class Star:
         df = get_Mamajek_table()
         gaia_sources = self.get_gaia_sources()
         self.gaia_params = gaia_sources.iloc[0].squeeze()
-        # if self.tic_params is None:
-        #     self.tic_params = self.query_tic_catalog(
-        #         return_nearest_xmatch=True
-        #     )
     
         # effective temperature
         col = "teff"
@@ -1538,17 +1534,27 @@ class Star:
         colors = []
         if 'G-V' in columns:
             gv_color =  mags['Gaia'][0] - mags['V'][0]
-            print(f"G-V={gv_color}")
             ugv_color = mags['Gaia'][1] + mags['V'][1]
+            print(f"G-V={gv_color:.2f}+/-{ugv_color:.2f}")
             s_gv_color = (
                  gv_color + np.random.randn(nsamples) * ugv_color
             )  # Monte Carlo samples
             colors.append(s_gv_color)
+        if 'Bp-Rp' in columns:
+            # Bp-Rp color index
+            sources = self.get_gaia_sources(rad_arcsec=30)
+            bprp_color =  sources.iloc[0]['bp_rp']
+            ubprp_color = 0.01
+            print(f"Gaia Bp-Rp={bprp_color:.2f}+/-{ubprp_color:.2f}")
+            s_bprp_color = (
+                bprp_color + np.random.randn(nsamples) * ubprp_color
+            ) 
+            colors.append(s_bprp_color)
         if 'J-H' in columns:
             # J-H color index
             jh_color =  mags['J'][0] - mags['H'][0]
-            print(f"J-H={jh_color}")
             ujh_color = mags['J'][1] + mags['H'][1]
+            print(f"J-H={jh_color:.2f}+/-{ujh_color:.2f}")
             s_jh_color = (
                 jh_color + np.random.randn(nsamples) * ujh_color
             )  # Monte Carlo samples
@@ -1556,8 +1562,8 @@ class Star:
         if 'H-Ks' in columns:        
             # H-Ks color index
             hk_color =  mags['H'][0] - mags['K'][0]
-            print(f"H-Ks={gv_color}")
             uhk_color = mags['H'][1] + mags['K'][1]
+            print(f"H-Ks={hk_color:.2f}+/-{uhk_color:.2f}")
             s_hk_color = (
                 hk_color + np.random.randn(nsamples) * uhk_color
             )
@@ -1565,8 +1571,8 @@ class Star:
         if 'W1-W2' in columns:
             # W1-W2 color index
             w1w2_color =  mags['WISE 3.4 micron'][0] - mags['WISE 4.6 micron'][0]
-            print(f"W1-W2={w1w2_color}")
             uw1w2_color = mags['WISE 3.4 micron'][1] + mags['WISE 4.6 micron'][1]
+            print(f"W1-W2={w1w2_color:.2f}+/-{uw1w2_color:.2f}")
             s_w1w2_color = (
                 w1w2_color + np.random.randn(nsamples) * uw1w2_color
             ) 
@@ -1574,29 +1580,41 @@ class Star:
         if 'W1-W3' in columns:
             # W1-W3 color index
             w1w3_color =  mags['WISE 3.4 micron'][0] - mags['WISE 12 micron'][0]
-            print(f"W1-W3={w1w3_color}")
             uw1w3_color = mags['WISE 3.4 micron'][1] + mags['WISE 12 micron'][1]
+            print(f"W1-W3={w1w3_color:.2f}+/-{uw1w3_color:.2f}")
             s_w1w3_color = (
                 w1w3_color + np.random.randn(nsamples) * uw1w3_color
             ) 
             colors.append(s_w1w3_color)
         
-        # Interpolate
+        # drop incomplete columns
         cols = columns.copy()
         cols.append("#SpT")
         df = df[cols].dropna()
+        # interpolate spec type using given colors 
         interp = NearestNDInterpolator(
-            df[columns].values, df["#SpT"].values, rescale=False
+            df[columns].values, 
+            df['#SpT'].cat.codes.values,
+            rescale=False
         )
-        samples = interp(s_teff, *colors)
-        # encode category
-        spt_cats = pd.Series(samples, dtype="category")  # .cat.codes
-        spt = spt_cats.mode().values[0]
+        samples_code = interp(s_teff, *colors)
+        code_spec_mapping = dict(enumerate(df["#SpT"].cat.categories))
+        samples_spec_types = pd.Series(samples_code).map(code_spec_mapping)
+        # get mode of distribution
+        spt = samples_spec_types.mode().values[0]
+        # specify dtype
+        spec_types = pd.Categorical(samples_spec_types, 
+                                    categories=df["#SpT"].cat.categories, 
+                                    ordered=True)
+        
         if plot:
-            nbins = np.unique(samples)
-            pl.hist(samples, bins=nbins)
+            d = spec_types.value_counts()
+            idx = d>100
+            ax = d[idx].plot(kind="barh")
+            ax.set_xlabel("Counts")
+            print(d[idx].sort_values(ascending=False))
         if return_samples:
-            return spt, samples
+            return spt, spec_types
         else:
             return spt
 
@@ -2016,7 +2034,7 @@ def lnlike_normal_s(o, m, e):
 
 def plot_tls_results(time, flux, results, toffset=2457000, figsize=(10,5)):
 
-    fig, axs = plt.subplot_mosaic('''
+    fig, axs = pl.subplot_mosaic('''
                                 AAA
                                 BCD
                                 ''', tight_layout=True, figsize=figsize)
@@ -2079,40 +2097,43 @@ def plot_tls_results(time, flux, results, toffset=2457000, figsize=(10,5)):
     ax.axhline(results.depth, 0, 1, ls='--')
     return fig
 
-def get_Mamajek_table(data_loc='../data'):
+def get_Mamajek_table(data_loc='../data', clobber=False):
     """
-    after downloading, I manually removed all ":" in table,
-    and replaced all 4 & 5 ellipsis into 3 ellipsis
     """
-    url = "http://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt"
-    fp = Path(data_loc, "Mamajek_table.txt")
-    if not fp.exists():        
-        response = requests.get(url)
-        with open(fp, "wb") as file:
-            file.write(response.text)
-            print("Saved: ", fp)
-    # Read the table
-    table = Table.read(fp, 
-                       format='ascii',
-                       comment='',
-                       header_start=22, 
-                       data_start=23,
-                       data_end=141,
-                       delimiter=' ',
-                       fill_values=('...', np.nan),
-                       fast_reader=False,
-                       guess=False)    
-    # Display the table
-    df = table.to_pandas()
-    #replace duplicated column=SpT_1 with letter only
-    # df['#SpT_1'] = df['#SpT'].apply(lambda x: x[0])
-    df = df.drop('#SpT_1', axis=1)
-    for col in df.columns:
-        if col == "#SpT":
-            df[col] = df[col].astype("category")
-        else:
-            df[col] = df[col].astype(float)
-    print(f"Loaded: {fp}")
+    fp = Path(data_loc, "Mamajek_table.csv")
+    if not fp.exists() or clobber:
+        url = "http://www.pas.rochester.edu/~emamajek/EEM_dwarf_UBVIJHK_colors_Teff.txt"
+        print(f"Downloading Mamajek table:\n{url}")
+        table = Table.read(url,
+                           format='ascii',
+                           comment='',
+                           header_start=22,
+                           data_start=23,
+                           data_end=141,
+                           delimiter=' ',
+                           fill_values=('...', np.nan),
+                           fast_reader=False,
+                           guess=False
+                          )
+        df = table.to_pandas()
+        #replace duplicated column=SpT_1 with letter only
+        # df['#SpT_1'] = df['#SpT'].apply(lambda x: x[0])
+        df = df.drop('#SpT_1', axis=1)
+        for col in df.columns:
+            df = df.replace('....', np.nan)
+            df = df.replace('.....', np.nan)
+            if col == "#SpT":
+                df[col] = df[col].astype("category")
+            else:
+                if col=="M_G":
+                    #fix typo
+                    df[col] = df[col].str.replace(':','')
+                df[col] = df[col].astype(float)
+        df.to_csv(fp, index=False)
+        print(f"Saved: {fp}")
+    else:
+        df = pd.read_csv(fp, dtype={"#SpT": "category"})
+        print(f"Loaded: {fp}")
     return df
 
 
