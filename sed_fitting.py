@@ -93,7 +93,6 @@ def load_filter_response(mission, band, wl_resample):
     wl, trans = np.loadtxt(response_file, usecols=(0,1), unpack=True)
     if mission == '2MASS':
         wl *= 1e4 # Angstrom
-
     elif mission == 'Gaia':
         wl *= 1e4 # Angstrom
     elif mission == 'WISE':
@@ -127,7 +126,6 @@ def zero_mag_flux(mission, band):
     elif mission == '2MASS' and band == 'H':
         zero_mag_flux = 1.133e-13 # W cm^-2 um^-1
         zero_mag_flux *= 1e7 / 1e4 # erg s^-1 cm^-2 A^-1
-
     elif mission == '2MASS' and band == 'K':
         zero_mag_flux = 4.283e-14 # W cm^-2 um^-1
         zero_mag_flux *= 1e7 / 1e4 # erg s^-1 cm^-2 A^-1

@@ -1,10 +1,8 @@
 #!/usr/bin/env python
 import os
-import json
 import requests
 from pathlib import Path
 from multiprocessing import Pool
-from urllib.request import urlopen
 from dataclasses import dataclass, field
 from typing import Dict, Tuple, List
 import numpy as np
@@ -1374,13 +1372,12 @@ class Star:
         self.exofop_url = (
             f"{base_url}/target.php?id={self.name.replace(' ','')}&json"
         )
-        response = urlopen(self.exofop_url)
-        assert response.code == 200, "Failed to get data from ExoFOP-TESS"
         try:
-            data_json = json.loads(response.read())
-            return data_json
-        except Exception:
-            raise ValueError(f"No TIC data found for {self.name}")
+            response = requests.get(self.exofop_url)
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            raise ValueError(f"Error while fetching data for {self.name}.\nError: {e}")
 
     def get_magnitudes(self):
         self.magnitudes = pd.json_normalize(self.data_json['magnitudes'])
@@ -1486,7 +1483,7 @@ class Star:
 
     def get_spectral_type(
         self,
-        columns="Teff G-V J-H H-Ks W1-W2 W1-W3".split(),
+        columns="Teff Rp-Rp J-H H-Ks W1-W2 W1-W3".split(),
         nsamples=int(1e4),
         return_samples=False,
         plot=False,
@@ -2155,9 +2152,12 @@ dss_description = {
 def get_exofop_json(target_name):
     url = f"https://exofop.ipac.caltech.edu/tess/target.php?id={target_name}&json"
     print(f"Querying data from exofop:\n{url}")
-    response = urlopen(url)
-    data_json = json.loads(response.read())
-    return data_json
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        raise ValueError(f"Error while fetching data for {target_name}.\nError: {e}")
 
 def get_dss_data(
     ra,

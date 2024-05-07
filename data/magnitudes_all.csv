@@ -1,0 +1,16 @@
+band,value,value_e,mnotes,mdate,muser,mgroup,mtag,mtabname
+TESS,14.8084,0.00745069,TIC v8.2,2019-04-15,TESS project,,,tmag
+V,16.27,0.2,TIC v8.2,2019-04-15,TESS project,,,vmag
+Gaia,16.0461,0.000662,TIC v8.2,2019-04-15,TESS project,,,gaiamag
+u,20.582,0.0489155,TIC v8.2,2019-04-15,TESS project,,,umag
+g,18.0417,0.00633655,TIC v8.2,2019-04-15,TESS project,,,gmag
+r,16.548,0.00471597,TIC v8.2,2019-04-15,TESS project,,,rmag
+i,15.3389,0.00502619,TIC v8.2,2019-04-15,TESS project,,,imag
+z,14.6238,0.00523672,TIC v8.2,2019-04-15,TESS project,,,zmag
+J,13.247,0.028,TIC v8.2,2019-04-15,TESS project,,,jmag
+H,12.659,0.023,TIC v8.2,2019-04-15,TESS project,,,hmag
+K,12.362,0.023,TIC v8.2,2019-04-15,TESS project,,,kmag
+WISE 3.4 micron,12.227,0.034,TIC v8.2,2019-04-15,TESS project,,,w1mag
+WISE 4.6 micron,12.112,0.034,TIC v8.2,2019-04-15,TESS project,,,w2mag
+WISE 12 micron,11.712,0.237,TIC v8.2,2019-04-15,TESS project,,,w3mag
+WISE 22 micron,8.484,,TIC v8.2,2019-04-15,TESS project,,,w4mag
