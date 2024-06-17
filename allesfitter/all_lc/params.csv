@@ -16,8 +16,8 @@ host_ldc_q1_muscat3_gp,0.7,0,normal 0.7 0.01,$q_{1; \mathrm{muscat3_gp}}$,
 host_ldc_q2_muscat3_gp,0.08,0,normal 0.08 0.01,$q_{2; \mathrm{muscat3_gp}}$,
 host_ldc_q1_lco1m_gp,0.7,0,normal 0.7 0.01,$q_{1; \mathrm{lco1m_gp}}$,
 host_ldc_q2_lco1m_gp,0.08,0,normal 0.08 0.01,$q_{2; \mathrm{lco1m_gp}}$,
-#host_ldc_q1_speculoos_gp,0.7,0,normal 0.7 0.01,$q_{1; \mathrm{speculoos_gp}}$,
-#host_ldc_q2_speculoos_gp,0.08,0,normal 0.08 0.01,$q_{2; \mathrm{speculoos_gp}}$,
+host_ldc_q1_speculoos_Iz,0.7,0,normal 0.7 0.01,$q_{1; \mathrm{speculoos_Iz}}$,
+host_ldc_q2_speculoos_Iz,0.08,0,normal 0.08 0.01,$q_{2; \mathrm{speculoos_Iz}}$,
 host_ldc_q1_lco1m_V,0.53,0,normal 0.1 0.01,$q_{1; \mathrm{lco1m_V}}$,
 host_ldc_q2_lco1m_V,0.38,0,normal 0.1 0.01,$q_{2; \mathrm{lco1m_V}}$,
 host_ldc_q1_muscat3_rp,0.51,0,normal 0.51 0.01,$q_{1; \mathrm{muscat3_rp}}$,
@@ -28,10 +28,8 @@ host_ldc_q1_keplercam_ip,0.42,0,normal 0.42 0.01,$q_{1; \mathrm{keplercam_ip}}$,
 host_ldc_q2_keplercam_ip,0.15,0,normal 0.15 0.01,$q_{2; \mathrm{keplercam_ip}}$,
 host_ldc_q1_muscat3_zs,0.36,0,normal 0.36 0.01,$q_{1; \mathrm{muscat3_zs}}$,
 host_ldc_q2_muscat3_zs,0.15,0,normal 0.15 0.01,$q_{2; \mathrm{muscat3_zs}}$,
-#host_ldc_q1_lco0.4m_zs_1,0.36,0,normal 0.36 0.01,$q_{1; \mathrm{lco0.4m_zs_1}}$,
-#host_ldc_q2_lco0.4m_zs_1,0.15,0,normal 0.15 0.01,$q_{2; \mathrm{lco0.4m_zs_1}}$,
-host_ldc_q1_lco0.4m_zs_2,0.36,0,normal 0.36 0.01,$q_{1; \mathrm{lco0.4m_zs_2}}$,
-host_ldc_q2_lco0.4m_zs_2,0.15,0,normal 0.15 0.01,$q_{2; \mathrm{lco0.4m_zs_2}}$,
+host_ldc_q1_lco0.4m_zs,0.36,0,normal 0.36 0.01,$q_{1; \mathrm{lco0.4m_zs}}$,
+host_ldc_q2_lco0.4m_zs,0.15,0,normal 0.15 0.01,$q_{2; \mathrm{lco0.4m_zs}}$,
 host_ldc_q1_tess,0.27,0,normal 0.36 0.01,$q_{1; \mathrm{tess}}$,
 host_ldc_q2_tess,0.26,0,normal 0.15 0.01,$q_{2; \mathrm{tess}}$,
 #surface brightness per instrument and companion,,,,,
@@ -44,7 +42,7 @@ host_ldc_q2_tess,0.26,0,normal 0.15 0.01,$q_{2; \mathrm{tess}}$,
 #spots per instrument and companion,,,,,
 #errors per instrument,
 ln_err_flux_muscat3_gp,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{muscat3_gp}}$,$\ln{ \mathrm{rel. flux.} }$
-ln_err_flux_speculoos_gp,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{speculoos_gp}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_speculoos_Iz,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{speculoos_Iz}}$,$\ln{ \mathrm{rel. flux.} }$
 ln_err_flux_lco1m_gp,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{lco1m_gp}}$,$\ln{ \mathrm{rel. flux.} }$
 ln_err_flux_lco1m_V,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{lco1m_V}}$,$\ln{ \mathrm{rel. flux.} }$
 ln_err_flux_muscat3_rp,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{muscat3_rp}}$,$\ln{ \mathrm{rel. flux.} }$
@@ -52,11 +50,7 @@ ln_err_flux_muscat3_rp,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{muscat3_rp}}
 ln_err_flux_muscat3_ip,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{muscat3_ip}}$,$\ln{ \mathrm{rel. flux.} }$
 ln_err_flux_keplercam_ip,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{keplercam_ip}}$,$\ln{ \mathrm{rel. flux.} }$
 ln_err_flux_muscat3_zs,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{muscat3_zs}}$,$\ln{ \mathrm{rel. flux.} }$
-ln_err_flux_trappist_Iz_1,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{trappist_Iz_1}}$,$\ln{ \mathrm{rel. flux.} }$
-ln_err_flux_trappist_Iz_2,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{trappist_Iz_2}}$,$\ln{ \mathrm{rel. flux.} }$
-ln_err_flux_speculoos_zs,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{speculoos_Iz}}$,$\ln{ \mathrm{rel. flux.} }$
-#ln_err_flux_lco0.4m_zs_1,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{lco0.4m_zs_1}}$,$\ln{ \mathrm{rel. flux.} }$
-ln_err_flux_lco0.4m_zs_2,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{lco0.4m_zs_2}}$,$\ln{ \mathrm{rel. flux.} }$
+ln_err_flux_lco0.4m_zs,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{lco0.4m_zs}}$,$\ln{ \mathrm{rel. flux.} }$
 ln_err_flux_tess,-7.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{tess}}$,$\ln{ \mathrm{rel. flux.} }$
 #ln_jitter_rv_ird,-3.0,1,uniform -15.0 0.0,$\ln{\sigma_\mathrm{jitter; ird}}$,$\ln{ \mathrm{km/s} }$
 #baseline per instrument,
@@ -64,7 +58,9 @@ baseline_gp_matern32_lnsigma_flux_muscat3_gp,0.0,1,uniform -15.0 15.0,$\mathrm{g
 baseline_gp_matern32_lnrho_flux_muscat3_gp,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (muscat3_gp)}$,
 baseline_gp_matern32_lnsigma_flux_lco1m_gp,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (lco1m_gp)}$, 
 baseline_gp_matern32_lnrho_flux_lco1m_gp,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (lco1m_gp)}$,
-#baseline_offset_flux_speculoos_gp,0,0,uniform -0.1 0.1,$\mathrm{offset (speculoos_gp)}$, 
+#baseline_offset_flux_speculoos_Iz,0,0,uniform -0.1 0.1,$\mathrm{offset (speculoos_Iz)}$, 
+baseline_gp_matern32_lnsigma_flux_speculoos_Iz,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (speculoos_Iz)}$, 
+baseline_gp_matern32_lnrho_flux_speculoos_Iz,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (speculoos_Iz)}$,
 #baseline_offset_flux_lco1m_V,0,0,uniform -0.1 0.1,$\mathrm{offset (lco_1m_V)}$,
 baseline_gp_matern32_lnsigma_flux_lco1m_V,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (lco1m_V)}$,
 baseline_gp_matern32_lnrho_flux_lco1m_V,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (lco1m_V)}$,
@@ -77,9 +73,7 @@ baseline_gp_matern32_lnrho_flux_keplercam_ip,0.0,1,uniform -15.0 15.0,$\mathrm{g
 #baseline_offset_flux_keplercam_ip,0,0,uniform -0.1 0.1,$\mathrm{offset (lco_keplercam_ip)}$,
 baseline_gp_matern32_lnsigma_flux_muscat3_zs,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (muscat3_zs)}$,
 baseline_gp_matern32_lnrho_flux_muscat3_zs,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (muscat3_zs)}$,
-#baseline_gp_matern32_lnsigma_flux_lco0.4m_zs_1,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (lco0.4m_zs_1)}$,
-#baseline_gp_matern32_lnrho_flux_lco0.4m_zs_1,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (lco0.4m_zs_1)}$,
-baseline_gp_matern32_lnsigma_flux_lco0.4m_zs_2,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (lco0.4m_zs_2)}$,
-baseline_gp_matern32_lnrho_flux_lco0.4m_zs_2,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (lco0.4m_zs_2)}$,
+baseline_gp_matern32_lnsigma_flux_lco0.4m_zs,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (lco0.4m_zs)}$,
+baseline_gp_matern32_lnrho_flux_lco0.4m_zs,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (lco0.4m_zs)}$,
 baseline_gp_matern32_lnsigma_flux_tess,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\sigma} (tess)}$,
 baseline_gp_matern32_lnrho_flux_tess,0.0,1,uniform -15.0 15.0,$\mathrm{gp: \ln{\rho} (tess)}$,

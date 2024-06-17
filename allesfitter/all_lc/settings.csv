@@ -5,11 +5,9 @@
 companions_phot,b
 companions_rv,
 #all
-#inst_phot,speculoos_gp muscat3_gp muscat3_rp lco1m_gp lco1m_V muscat3_ip keplercam_ip trappist_Iz_1 trappist_Iz_2 muscat3_zs speculoos_zs lco0.4m_zs_1 lco0.4m_zs_2 trappist_Iz_1 trappist_Iz_2 tess
 #good
-inst_phot,muscat3_gp muscat3_rp lco1m_gp lco1m_V muscat3_ip keplercam_ip muscat3_zs lco0.4m_zs_2 tess
+inst_phot,muscat3_gp muscat3_rp lco1m_gp lco1m_V muscat3_ip keplercam_ip muscat3_zs lco0.4m_zs tess speculoos_Iz
 #problematic
-#inst_phot,speculoos_gp trappist_Iz_1 trappist_Iz_2 speculoos_zs lco0.4m_zs_1 trappist_Iz_1 trappist_Iz_2
 inst_rv,
 ###############################################################################,
 # Fit performance settings,
@@ -52,8 +50,8 @@ host_ld_law_lco1m_gp,quad
 host_ld_law_muscat3_rp,quad
 host_ld_law_muscat3_ip,quad
 host_ld_law_muscat3_zs,quad
-#host_ld_law_lco0.4m_zs_1,quad
-host_ld_law_lco0.4m_zs_2,quad
+host_ld_law_speculoos_Iz,quad
+host_ld_law_lco0.4m_zs,quad
 host_ld_law_tess,quad
 ###############################################################################,
 # Baseline settings per instrument,
@@ -65,16 +63,13 @@ host_ld_law_tess,quad
 baseline_flux_muscat3_gp,sample_GP_Matern32
 baseline_flux_lco1m_gp,sample_GP_Matern32
 baseline_flux_lco1m_V,sample_GP_Matern32
-#baseline_flux_speculoos_gp,sample_GP_Matern32
+baseline_flux_speculoos_Iz,sample_GP_Matern32
 baseline_flux_muscat3_rp,sample_GP_Matern32
 baseline_flux_muscat3_ip,sample_GP_Matern32
 baseline_flux_keplercam_ip,sample_GP_Matern32
-#baseline_flux_keplercam_ip,sample_offset
 baseline_flux_muscat3_zs,sample_GP_Matern32
-#baseline_flux_lco0.4m_zs_1,sample_GP_Matern32
-baseline_flux_lco0.4m_zs_2,sample_GP_Matern32
+baseline_flux_lco0.4m_zs,sample_GP_Matern32
 baseline_flux_tess,sample_GP_Matern32
-#baseline_rv_ird,sample_GP_Matern32
 ###############################################################################,
 # Error settings per instrument,
 # errors (overall scaling) per instrument: sample / hybrid,
@@ -82,15 +77,13 @@ baseline_flux_tess,sample_GP_Matern32
 ###############################################################################,
 error_flux_muscat3_gp,sample
 error_flux_lco1m_gp,sample
-#error_flux_speculoos_gp,sample
+error_flux_speculoos_Iz,sample
 error_flux_lco1m_V,sample
 error_flux_muscat3_rp,sample
 error_flux_muscat3_ip,sample
 error_flux_muscat3_zs,sample
-#error_flux_lco0.4m_zs_1,sample
-error_flux_lco0.4m_zs_2,sample
+error_flux_lco0.4m_zs,sample
 error_flux_tess,sample
-#error_rv_ird,sample
 ###############################################################################,
 # Exposure times for interpolation,
 # needs to be in the same units as the time series,

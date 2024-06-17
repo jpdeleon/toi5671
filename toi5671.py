@@ -1879,45 +1879,23 @@ def read_all_phot(phot_dir, sort_by='band'):
     """"""
     lc_lco1_mcd_V = read_lco1_mcd_V(phot_dir)
     lc_lco1_mcd_g = read_lco1_mcd_g(phot_dir)
-    lc_spec_g = read_spec_g(phot_dir)    
     lcs_muscat3 = read_muscat3(phot_dir)
-    lcs_muscat2_230510 = read_muscat2(phot_dir, date=230510)
-    lcs_muscat2_240217 = read_muscat2(phot_dir, date=240217)
     lc_keplercam_i = read_keplercam_i(phot_dir)
-    lc_spec_z = read_spec_z(phot_dir)
-    lc_lco0_tei_z = read_lco0_tei_z(phot_dir)
     lc_lco0_hal_z = read_lco0_hal_z(phot_dir)
-    lc_trappist_I_z1 = read_trappist_I_z1(phot_dir)
-    lc_trappist_I_z2 = read_trappist_I_z2(phot_dir)
-    lc_spec_I_z = read_spec_I_z(phot_dir)
     lc_tess = read_tess(phot_dir)
 
     lcs = {}
     if sort_by=='band':
         lcs['gp'] = {'muscat3': lcs_muscat3['g'],
-                     # 'muscat2': lcs_muscat2_240217['g'],
                      'lco1m': lc_lco1_mcd_g, 
-                     #'speculoos': lc_spec_g
                     }
         lcs['V']  = {'lco1m': lc_lco1_mcd_V,}
         lcs['rp'] = {'muscat3': lcs_muscat3['r'],
-                     # 'muscat2_a': lcs_muscat2_230510['r'],
-                     # 'muscat2_b': lcs_muscat2_240217['r'],
                     }
         lcs['ip'] = {'muscat3': lcs_muscat3['i'], 
-                     # 'muscat2_a': lcs_muscat2_230510['i'],
-                     # 'muscat2_b': lcs_muscat2_240217['i'],
                      'keplercam': lc_keplercam_i,
                     }
-        #lcs['I+z'] = {'speculoos': lc_spec_I_z,
-        #             'trappist_a': lc_trappist_I_z1,
-        #             'trappist_b': lc_trappist_I_z2,
-        #            }
         lcs['zs'] = {'muscat3': lcs_muscat3['z'], 
-                     # 'muscat2_a': lcs_muscat2_230510['z'],
-                     # 'muscat2_b': lcs_muscat2_240217['z'],
-                     #'speculoos': lc_spec_z,
-                     #'lco0.4m_a': lc_lco0_tei_z, 
                      'lco0.4m_b': lc_lco0_hal_z
                     }
         lcs['TESS'] = {'TESS': lc_tess}
@@ -1926,14 +1904,6 @@ def read_all_phot(phot_dir, sort_by='band'):
                           'rp': [lcs_muscat3['r']], 
                           'ip': [lcs_muscat3['i']], 
                           'zs': [lcs_muscat3['z']]}
-        # lcs['muscat2_a'] = {#'gp': [lcs_muscat2_230510['g']], 
-        #                   'rp': [lcs_muscat2_230510['r']], 
-        #                   'ip': [lcs_muscat2_230510['i']], 
-        #                   'zs': [lcs_muscat2_230510['z']]}
-        # lcs['muscat2_b'] = {'gp': [lcs_muscat2_240217['g']], 
-        #                   'rp': [lcs_muscat2_240217['r']], 
-        #                   'ip': [lcs_muscat2_240217['i']], 
-        #                   'zs': [lcs_muscat2_240217['z']]}
         lcs['lco0.4m'] = {'zs': [lc_lco0_tei_z, lc_lco0_hal_z]}
         lcs['lco1m'] = {'gp': [lc_lco1_mcd_g],
                         'V': [lc_lco1_mcd_V], 
